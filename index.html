@@ -82,12 +82,17 @@ nav.scrolled{background:rgba(7,9,15,.92);backdrop-filter:blur(20px);border-color
 .hero-stats{display:flex;gap:32px;flex-wrap:wrap}
 .stat-n{font-size:28px;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .stat-l{font-size:12px;color:var(--muted);font-family:var(--mono)}
-.hero-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:28px;min-width:200px;position:relative;overflow:hidden}
+.hero-card{background:var(--card);border:1px solid var(--border);border-radius:16px;min-width:260px;position:relative;overflow:hidden}
 .hero-card::before{content:'';position:absolute;inset:0;background:var(--grad);opacity:.04}
-.hero-card-title{font-size:11px;font-family:var(--mono);color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
-.hero-tech-list{display:flex;flex-direction:column;gap:10px}
-.hero-tech-item{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:500}
-.htd{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.hero-card-bar{display:flex;align-items:center;gap:6px;padding:10px 14px;border-bottom:1px solid var(--border);background:rgba(255,255,255,.02)}
+.hero-card-dot{width:10px;height:10px;border-radius:50%}
+.hero-card-file{font-family:var(--mono);font-size:11px;color:var(--muted);margin-left:auto}
+.hero-card-code{padding:18px 20px;font-family:var(--mono);font-size:12.5px;line-height:2}
+.hcc-k{color:var(--purple)}
+.hcc-s{color:var(--cyan)}
+.hcc-v{color:var(--green)}
+.hcc-n{color:#93c5fd}
+.hcc-p{color:var(--muted)}
 
 /* ABOUT */
 #about{background:var(--bg2)}
@@ -111,7 +116,7 @@ nav.scrolled{background:rgba(7,9,15,.92);backdrop-filter:blur(20px);border-color
 .skill-card:hover{border-color:rgba(59,130,246,.25);transform:translateY(-3px)}
 .skill-card:hover::before{opacity:1}
 .skill-hdr{display:flex;align-items:center;gap:12px;margin-bottom:16px}
-.skill-hdr-icon{font-size:22px}
+.skill-hdr-num{font-family:var(--mono);font-size:11px;color:var(--cyan);letter-spacing:1px;opacity:.8;flex-shrink:0}
 .skill-hdr-title{font-weight:700;font-size:14px}
 .tags{display:flex;flex-wrap:wrap;gap:7px}
 .tag{padding:4px 12px;border-radius:100px;font-size:12px;font-weight:500;font-family:var(--mono);cursor:default;transition:all var(--ease)}
@@ -279,7 +284,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:40px 0;te
       <li><a href="#demo">Demo</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#education">Education</a></li>
-      <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+      <li><a href="#contact" class="nav-cta">Hire me</a></li>
     </ul>
     <div class="burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
   </div>
@@ -309,21 +314,26 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:40px 0;te
       </div>
       <div class="hero-stats">
         <div><div class="stat-n">7+</div><div class="stat-l">Projects Shipped</div></div>
-        <div><div class="stat-n">3.70</div><div class="stat-l">GPA / 4.0</div></div>
+        <div><div class="stat-n">3.60</div><div class="stat-l">GPA / 4.0</div></div>
         <div><div class="stat-n">2</div><div class="stat-l">Certifications</div></div>
         <div><div class="stat-n">5+</div><div class="stat-l">Tech Stacks</div></div>
       </div>
     </div>
     <div class="hero-card reveal">
-      <div class="hero-card-title">Core Stack</div>
-      <div class="hero-tech-list">
-        <div class="hero-tech-item"><span class="htd" style="background:#3b82f6"></span>Python &middot; Django &middot; DRF</div>
-        <div class="hero-tech-item"><span class="htd" style="background:#68d391"></span>Node.js &middot; Express.js</div>
-        <div class="hero-tech-item"><span class="htd" style="background:#f6ad55"></span>PHP &middot; Laravel</div>
-        <div class="hero-tech-item"><span class="htd" style="background:#63b3ed"></span>Vue.js &middot; React &middot; TypeScript</div>
-        <div class="hero-tech-item"><span class="htd" style="background:#a78bfa"></span>MySQL &middot; MongoDB &middot; Redis</div>
-        <div class="hero-tech-item"><span class="htd" style="background:#f687b3"></span>Docker &middot; Git &middot; CI/CD</div>
-        <div class="hero-tech-item"><span class="htd" style="background:#fbbf24"></span>AWS &middot; GenAI &middot; RAG</div>
+      <div class="hero-card-bar">
+        <span class="hero-card-dot" style="background:#ff5f57"></span>
+        <span class="hero-card-dot" style="background:#febc2e"></span>
+        <span class="hero-card-dot" style="background:#28c840"></span>
+        <span class="hero-card-file">~/ali/profile.ts</span>
+      </div>
+      <div class="hero-card-code">
+        <div><span class="hcc-k">const</span> <span class="hcc-n">profile</span> <span class="hcc-p">=</span> <span class="hcc-p">{</span></div>
+        <div>&nbsp;&nbsp;<span class="hcc-s">name</span><span class="hcc-p">:</span> <span class="hcc-v">"Ali Essam"</span><span class="hcc-p">,</span></div>
+        <div>&nbsp;&nbsp;<span class="hcc-s">role</span><span class="hcc-p">:</span> <span class="hcc-v">"Backend Engineer"</span><span class="hcc-p">,</span></div>
+        <div>&nbsp;&nbsp;<span class="hcc-s">degree</span><span class="hcc-p">:</span> <span class="hcc-v">"CS &middot; 3.60 / 4.0"</span><span class="hcc-p">,</span></div>
+        <div>&nbsp;&nbsp;<span class="hcc-s">stack</span><span class="hcc-p">:</span> <span class="hcc-p">[</span><span class="hcc-v">"Python"</span><span class="hcc-p">,</span> <span class="hcc-v">"Node"</span><span class="hcc-p">,</span> <span class="hcc-v">"Vue"</span><span class="hcc-p">]</span><span class="hcc-p">,</span></div>
+        <div>&nbsp;&nbsp;<span class="hcc-s">open</span><span class="hcc-p">:</span> <span class="hcc-k">true</span></div>
+        <div><span class="hcc-p">}</span></div>
       </div>
     </div>
   </div>
@@ -337,7 +347,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:40px 0;te
     <h2 class="sec-title">Building Things That <span>Actually Work</span></h2>
     <div class="about-grid">
       <div class="reveal-l about-text">
-        <p>I'm a <strong>Software Engineer</strong> from Mansoura, Egypt, with a Computer Science degree (GPA 3.70 / 4.0) and hands-on experience building production-grade web applications. Currently deepening my expertise through ITI's Open-Source Applications Development track.</p>
+        <p>I'm a <strong>Software Engineer</strong> from Mansoura, Egypt, with a Computer Science degree (GPA 3.60 / 4.0) and hands-on experience building production-grade web applications. Currently deepening my expertise through ITI's Open-Source Applications Development track.</p>
         <p>My work spans the full spectrum &mdash; from designing secure RESTful APIs and relational/NoSQL database schemas, to crafting responsive UIs with Vue.js, React, and TypeScript. I care deeply about <strong>system architecture, security, and code quality</strong>, not just making things run.</p>
         <p>I've worked across <strong>Python/Django, Node.js/Express, and PHP/Laravel</strong> ecosystems, integrated payment gateways (Stripe, Kashier), implemented JWT/RBAC authentication, and recently started building with Generative AI tools and RAG pipelines.</p>
         <div class="about-hl">
@@ -346,7 +356,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:40px 0;te
         </div>
       </div>
       <div class="reveal">
-        <div class="fact-card"><div class="fact-top"><span style="font-size:22px">&#x1F393;</span><strong>Computer Science &amp; Engineering</strong></div><div class="fact-detail">Mansoura University &middot; Faculty of Engineering</div><div class="fbadge">GPA 3.70 / 4.0 &middot; Grade: Excellent</div></div>
+        <div class="fact-card"><div class="fact-top"><span style="font-size:22px">&#x1F393;</span><strong>Computer Science &amp; Engineering</strong></div><div class="fact-detail">Mansoura University &middot; Faculty of Engineering</div><div class="fbadge">GPA 3.60 / 4.0 &middot; Grade: Excellent</div></div>
         <div class="fact-card"><div class="fact-top"><span style="font-size:22px">&#x26A1;</span><strong>ITI Intensive Track</strong></div><div class="fact-detail">Open-Source Applications Development &mdash; 9-Month Program, 2025&ndash;2026</div><div class="fbadge">In Progress</div></div>
         <div class="fact-card"><div class="fact-top"><span style="font-size:22px">&#x1F510;</span><strong>AWS &amp; Security Certified</strong></div><div class="fact-detail">Cloud Practitioner + CS406 Information Security (93.88%)</div><div class="fbadge">Verified Credentials</div></div>
         <div class="fact-card"><div class="fact-top"><span style="font-size:22px">&#x1F465;</span><strong>Community Leadership</strong></div><div class="fact-detail">Vice Leader, Embedded Systems Circle &middot; CAT Reloaded &middot; 2020&ndash;2022</div><div class="fbadge">Mentored Students</div></div>
@@ -363,12 +373,12 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:40px 0;te
     <h2 class="sec-title">Skills &amp; <span>Technologies</span></h2>
     <p class="sec-desc">A broad, production-tested tech stack spanning frontend, backend, databases, DevOps, and AI.</p>
     <div class="skills-grid">
-      <div class="skill-card reveal"><div class="skill-hdr"><span class="skill-hdr-icon">&#x1F3A8;</span><span class="skill-hdr-title">Frontend</span></div><div class="tags"><span class="tag tb">HTML5</span><span class="tag tb">CSS3</span><span class="tag tb">JavaScript</span><span class="tag tb">TypeScript</span><span class="tag tc">React</span><span class="tag tc">Vue.js</span><span class="tag tc">Next.js</span><span class="tag tc">Angular</span><span class="tag tp">Tailwind CSS</span><span class="tag tp">Bootstrap</span></div></div>
-      <div class="skill-card reveal"><div class="skill-hdr"><span class="skill-hdr-icon">&#x2699;&#xFE0F;</span><span class="skill-hdr-title">Backend</span></div><div class="tags"><span class="tag tg">Python</span><span class="tag tg">Django</span><span class="tag tg">DRF</span><span class="tag to">Node.js</span><span class="tag to">Express.js</span><span class="tag to">Inertia.js</span><span class="tag tb">PHP</span><span class="tag tb">Laravel</span><span class="tag tp">Java</span><span class="tag tp">C++</span></div></div>
-      <div class="skill-card reveal"><div class="skill-hdr"><span class="skill-hdr-icon">&#x1F5C4;&#xFE0F;</span><span class="skill-hdr-title">Databases &amp; ORM</span></div><div class="tags"><span class="tag tb">MySQL</span><span class="tag tb">PostgreSQL</span><span class="tag tg">MongoDB</span><span class="tag to">Redis</span><span class="tag tp">SQLite</span><span class="tag tc">Prisma ORM</span><span class="tag tc">Mongoose</span><span class="tag tc">Django ORM</span></div></div>
-      <div class="skill-card reveal"><div class="skill-hdr"><span class="skill-hdr-icon">&#x1F6E1;&#xFE0F;</span><span class="skill-hdr-title">Security &amp; Auth</span></div><div class="tags"><span class="tag to">JWT</span><span class="tag to">RBAC</span><span class="tag to">OAuth</span><span class="tag tpk">App Security</span><span class="tag tpk">Webhook Verification</span><span class="tag tp">TDD</span><span class="tag tp">Unit Testing</span></div></div>
-      <div class="skill-card reveal"><div class="skill-hdr"><span class="skill-hdr-icon">&#x2601;&#xFE0F;</span><span class="skill-hdr-title">DevOps, Cloud &amp; Payments</span></div><div class="tags"><span class="tag to">AWS</span><span class="tag tb">Docker</span><span class="tag tb">Git</span><span class="tag tb">GitHub Actions</span><span class="tag tg">CI/CD</span><span class="tag tg">Linux</span><span class="tag tc">Apache</span><span class="tag tc">Bash</span><span class="tag tp">Stripe</span><span class="tag tp">Kashier</span></div></div>
-      <div class="skill-card reveal"><div class="skill-hdr"><span class="skill-hdr-icon">&#x1F916;</span><span class="skill-hdr-title">AI &amp; Architecture</span></div><div class="tags"><span class="tag tpk">Generative AI</span><span class="tag tpk">Prompt Engineering</span><span class="tag tpk">GenAI APIs</span><span class="tag tpk">RAG</span><span class="tag tb">OOP</span><span class="tag tb">SOLID</span><span class="tag tc">MVC</span><span class="tag tc">Clean Code</span><span class="tag tp">Design Patterns</span></div></div>
+      <div class="skill-card reveal"><div class="skill-hdr"><span class="skill-hdr-num">01</span><span class="skill-hdr-title">Frontend</span></div><div class="tags"><span class="tag tb">HTML5</span><span class="tag tb">CSS3</span><span class="tag tb">JavaScript</span><span class="tag tb">TypeScript</span><span class="tag tc">React</span><span class="tag tc">Vue.js</span><span class="tag tc">Next.js</span><span class="tag tc">Angular</span><span class="tag tp">Tailwind CSS</span><span class="tag tp">Bootstrap</span></div></div>
+      <div class="skill-card reveal"><div class="skill-hdr"><span class="skill-hdr-num">02</span><span class="skill-hdr-title">Backend</span></div><div class="tags"><span class="tag tg">Python</span><span class="tag tg">Django</span><span class="tag tg">DRF</span><span class="tag to">Node.js</span><span class="tag to">Express.js</span><span class="tag to">Inertia.js</span><span class="tag tb">PHP</span><span class="tag tb">Laravel</span><span class="tag tp">Java</span><span class="tag tp">C++</span></div></div>
+      <div class="skill-card reveal"><div class="skill-hdr"><span class="skill-hdr-num">03</span><span class="skill-hdr-title">Databases &amp; ORM</span></div><div class="tags"><span class="tag tb">MySQL</span><span class="tag tb">PostgreSQL</span><span class="tag tg">MongoDB</span><span class="tag to">Redis</span><span class="tag tp">SQLite</span><span class="tag tc">Prisma ORM</span><span class="tag tc">Mongoose</span><span class="tag tc">Django ORM</span></div></div>
+      <div class="skill-card reveal"><div class="skill-hdr"><span class="skill-hdr-num">04</span><span class="skill-hdr-title">Security &amp; Auth</span></div><div class="tags"><span class="tag to">JWT</span><span class="tag to">RBAC</span><span class="tag to">OAuth</span><span class="tag tpk">App Security</span><span class="tag tpk">Webhook Verification</span><span class="tag tp">TDD</span><span class="tag tp">Unit Testing</span></div></div>
+      <div class="skill-card reveal"><div class="skill-hdr"><span class="skill-hdr-num">05</span><span class="skill-hdr-title">DevOps &middot; Cloud &middot; Pay</span></div><div class="tags"><span class="tag to">AWS</span><span class="tag tb">Docker</span><span class="tag tb">Git</span><span class="tag tb">GitHub Actions</span><span class="tag tg">CI/CD</span><span class="tag tg">Linux</span><span class="tag tc">Apache</span><span class="tag tc">Bash</span><span class="tag tp">Stripe</span><span class="tag tp">Kashier</span></div></div>
+      <div class="skill-card reveal"><div class="skill-hdr"><span class="skill-hdr-num">06</span><span class="skill-hdr-title">AI &amp; Architecture</span></div><div class="tags"><span class="tag tpk">Generative AI</span><span class="tag tpk">Prompt Engineering</span><span class="tag tpk">GenAI APIs</span><span class="tag tpk">RAG</span><span class="tag tb">OOP</span><span class="tag tb">SOLID</span><span class="tag tc">MVC</span><span class="tag tc">Clean Code</span><span class="tag tp">Design Patterns</span></div></div>
     </div>
   </div>
 </section>
@@ -564,9 +574,10 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:40px 0;te
 
 <section id="education" class="section">
   <div class="container">
-    <div class="sec-label">Academic Background</div>
-    <h2 class="sec-title">Education &amp; <span>Training</span></h2>
-    <p class="sec-desc">Strong academic foundation combined with intensive practical training in modern open-source development.</p>
+    <div class="sec-label">BACKGROUND</div>
+    <h2 class="sec-title">Education &amp; <span>Credentials</span></h2>
+    <p class="sec-desc">Academic foundation, industry certifications, and community leadership.</p>
+
     <div class="timeline">
       <div class="tl-item reveal">
         <div class="tl-dot"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
@@ -575,7 +586,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:40px 0;te
           <div class="tl-title">B.Sc. Computer Science &amp; Engineering</div>
           <div class="tl-sub">Mansoura University &middot; Faculty of Engineering &middot; Egypt</div>
           <p style="font-size:13.5px;color:var(--muted);line-height:1.7;margin-bottom:12px">Graduation project "FreeSmile" &mdash; a full-stack web application demonstrating end-to-end ownership from design to deployment, with custom UI/UX and efficient server-side logic.</p>
-          <div class="tl-badges"><span class="bdg bdg-gold">GPA 3.70 / 4.0</span><span class="bdg bdg-green">Grade: Excellent</span><span class="bdg bdg-blue">Computer Science</span><span class="bdg bdg-purple">Engineering</span></div>
+          <div class="tl-badges"><span class="bdg bdg-gold">GPA 3.60 / 4.0</span><span class="bdg bdg-green">Grade: Excellent</span><span class="bdg bdg-blue">Computer Science</span><span class="bdg bdg-purple">Engineering</span></div>
         </div>
       </div>
       <div class="tl-item reveal">
@@ -588,38 +599,35 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:40px 0;te
           <div class="tl-badges"><span class="bdg bdg-blue">In Progress</span><span class="bdg bdg-purple">Open Source</span><span class="bdg bdg-green">ITI Certified</span></div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<section id="certifications" class="section">
-  <div class="container">
-    <div class="sec-label">Credentials</div>
-    <h2 class="sec-title">Certifications &amp; <span>Achievements</span></h2>
-    <p class="sec-desc">Industry-recognized credentials validating cloud and security expertise.</p>
-    <div class="certs-grid">
-      <div class="cert-card reveal"><div class="cert-logo" style="color:var(--orange)"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg></div><div class="cert-name">AWS Certified Cloud Practitioner</div><div class="cert-issuer">Amazon Web Services &middot; CLF-C02</div><div class="cert-desc">Validated foundational knowledge of AWS core services, cloud architecture, security controls, pricing models, and the AWS Well-Architected Framework.</div></div>
-      <div class="cert-card reveal"><div class="cert-logo" style="color:var(--blue)"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div><div class="cert-name">CS406: Information Security</div><div class="cert-issuer">Saylor University &middot; 46 Hours</div><div class="cert-desc">Rigorous program covering threat modeling, cryptography, access control systems, network security, and industry security best practices.</div><div class="cert-score">&#x2713; Score: 93.88%</div></div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<section id="experience" class="section">
-  <div class="container">
-    <div class="sec-label">Leadership</div>
-    <h2 class="sec-title">Extracurricular <span>Activities</span></h2>
-    <p class="sec-desc">Building and leading technical communities beyond the codebase.</p>
-    <div class="exp-card reveal">
-      <div class="exp-hdr"><div class="exp-title">Vice Leader, Embedded Systems Circle</div><div class="exp-date">Sep 2020 &mdash; Jul 2022</div></div>
-      <div class="exp-org">CAT Reloaded &middot; Mansoura, Egypt</div>
-      <div class="exp-blist">
-        <div class="exp-b">Led and mentored a student team, developing a comprehensive Embedded Systems curriculum and delivering workshops on microcontrollers, C programming, and hardware interfacing.</div>
-        <div class="exp-b">Oversaw collaborative engineering projects, guiding members on software best practices and system design to accelerate their readiness for the tech industry.</div>
-        <div class="exp-b">Demonstrated curriculum design, cross-functional mentoring, and leadership in a fast-paced technical community of 50+ active members.</div>
+      <div class="tl-item reveal">
+        <div class="tl-dot" style="border-color:var(--orange)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg></div>
+        <div class="tl-body">
+          <div class="tl-date">CERTIFICATION</div>
+          <div class="tl-title">AWS Certified Cloud Practitioner</div>
+          <div class="tl-sub">Amazon Web Services &middot; CLF-C02</div>
+          <p style="font-size:13.5px;color:var(--muted);line-height:1.7;margin-bottom:12px">Validated foundational knowledge of AWS core services, cloud architecture, security controls, pricing models, and the AWS Well-Architected Framework.</p>
+          <div class="tl-badges"><span class="bdg bdg-gold">AWS Certified</span><span class="bdg bdg-blue">Cloud Practitioner</span></div>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot" style="border-color:var(--blue)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <div class="tl-body">
+          <div class="tl-date">CERTIFICATION</div>
+          <div class="tl-title">CS406: Information Security</div>
+          <div class="tl-sub">Saylor University &middot; 46 Hours</div>
+          <p style="font-size:13.5px;color:var(--muted);line-height:1.7;margin-bottom:12px">Rigorous program covering threat modeling, cryptography, access control systems, network security, and industry security best practices.</p>
+          <div class="tl-badges"><span class="bdg bdg-green">Score: 93.88%</span><span class="bdg bdg-blue">Information Security</span></div>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot" style="border-color:var(--purple)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div class="tl-body">
+          <div class="tl-date">SEP 2020 &mdash; JUL 2022</div>
+          <div class="tl-title">Vice Leader, Embedded Systems Circle</div>
+          <div class="tl-sub">CAT Reloaded &middot; Mansoura, Egypt</div>
+          <p style="font-size:13.5px;color:var(--muted);line-height:1.7;margin-bottom:12px">Led and mentored a student team of 50+ members, delivering workshops on microcontrollers, C programming, and hardware interfacing. Oversaw curriculum design and cross-functional engineering projects.</p>
+          <div class="tl-badges"><span class="bdg bdg-purple">Community Leadership</span><span class="bdg bdg-green">Mentored 50+ Students</span></div>
+        </div>
       </div>
     </div>
   </div>
@@ -661,7 +669,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:40px 0;te
         <a href="mailto:eng.ali.essam@gmail.com" class="soc" title="Email"><svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
       </div>
       <div class="footer-links"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div>
-      <div class="footer-copy">&copy; 2025 Ali Essam &nbsp;&middot;&nbsp; <span style="font-family:var(--mono);color:var(--blue)">HTML &middot; CSS &middot; JS</span></div>
+      <div class="footer-copy">&copy; 2025 ali essam &nbsp;&middot;&nbsp; <span style="font-family:var(--mono);color:var(--blue)">built with html &middot; css &middot; js</span></div>
     </div>
   </div>
 </footer>

@@ -7,6 +7,7 @@
 <meta name="description" content="Ali Essam — Full-Stack Developer specializing in Python, Django, Node.js, Vue.js, React, and AI. Open to remote work and relocation.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 <style>
 :root{
   --bg:#07090f;--bg2:#0e1117;--bg3:#161b27;--card:#1a2035;
@@ -148,7 +149,8 @@ nav.scrolled{background:rgba(7,9,15,.92);backdrop-filter:blur(20px);border-color
 .proj-img-wrap img{width:100%;height:100%;object-fit:contain;object-position:center;display:block;position:relative;z-index:1;transition:transform .55s ease}
 .project-card:hover .proj-img-wrap img{transform:scale(1.04)}
 .proj-placeholder{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:linear-gradient(135deg,#0a0e1a,#0d1422)}
-.proj-placeholder-icon{font-size:52px;opacity:.55}
+.proj-placeholder-icon{opacity:.55;width:52px;height:52px;display:flex;align-items:center;justify-content:center}
+.proj-placeholder-icon svg{width:52px;height:52px;stroke:var(--dim)}
 .proj-placeholder-label{font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:1px}
 .proj-img-overlay{position:absolute;inset:0;z-index:2;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity var(--ease);cursor:zoom-in;backdrop-filter:blur(3px)}
 .proj-img-wrap:hover .proj-img-overlay{opacity:1}
@@ -290,7 +292,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:40px 0;te
   </div>
 </nav>
 <div class="mob-menu" id="mobMenu">
-  <span class="mob-close" onclick="toggleMenu()">&#x2715;</span>
+  <span class="mob-close" onclick="toggleMenu()"><i data-lucide="x" style="width:24px;height:24px"></i></span>
   <a href="#about" onclick="toggleMenu()">About</a>
   <a href="#skills" onclick="toggleMenu()">Skills</a>
   <a href="#demo" onclick="toggleMenu()">Demo</a>
@@ -309,8 +311,8 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:40px 0;te
       <div class="hero-role"><span id="typed" class="typed"></span></div>
       <p class="hero-desc">Building scalable, end-to-end web applications with clean architecture and modern tech. Specialized in Python, Node.js, Vue.js, React, and integrating AI capabilities into production products.</p>
       <div class="hero-btns">
-        <a href="#projects" class="btn btn-p">&#x25B6; View Projects</a>
-        <a href="#contact" class="btn btn-s">&#x2709; Get In Touch</a>
+        <a href="#projects" class="btn btn-p"><i data-lucide="play" style="width:15px;height:15px"></i> View Projects</a>
+        <a href="#contact" class="btn btn-s"><i data-lucide="mail" style="width:15px;height:15px"></i> Get In Touch</a>
       </div>
       <div class="hero-stats">
         <div><div class="stat-n">7+</div><div class="stat-l">Projects Shipped</div></div>
@@ -351,15 +353,15 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:40px 0;te
         <p>My work spans the full spectrum &mdash; from designing secure RESTful APIs and relational/NoSQL database schemas, to crafting responsive UIs with Vue.js, React, and TypeScript. I care deeply about <strong>system architecture, security, and code quality</strong>, not just making things run.</p>
         <p>I've worked across <strong>Python/Django, Node.js/Express, and PHP/Laravel</strong> ecosystems, integrated payment gateways (Stripe, Kashier), implemented JWT/RBAC authentication, and recently started building with Generative AI tools and RAG pipelines.</p>
         <div class="about-hl">
-          <span style="font-size:20px;flex-shrink:0;margin-top:2px">&#x1F30D;</span>
+          <span style="flex-shrink:0;margin-top:2px;color:var(--cyan);display:flex"><i data-lucide="globe" style="width:20px;height:20px"></i></span>
           <p><strong>Open to remote work &amp; relocation</strong>Based in Mansoura, Egypt. Military service: Completed. Available for full-time roles, contract work, or technical consulting.</p>
         </div>
       </div>
       <div class="reveal">
-        <div class="fact-card"><div class="fact-top"><span style="font-size:22px">&#x1F393;</span><strong>Computer Science &amp; Engineering</strong></div><div class="fact-detail">Mansoura University &middot; Faculty of Engineering</div><div class="fbadge">GPA 3.36 / 4.0 &middot; 84% &middot; Grade: Very Good</div></div>
-        <div class="fact-card"><div class="fact-top"><span style="font-size:22px">&#x26A1;</span><strong>ITI Intensive Track</strong></div><div class="fact-detail">Open-Source Applications Development &mdash; 9-Month Program, 2025&ndash;2026</div><div class="fbadge">In Progress</div></div>
-        <div class="fact-card"><div class="fact-top"><span style="font-size:22px">&#x1F510;</span><strong>AWS &amp; Security Certified</strong></div><div class="fact-detail">Cloud Practitioner + CS406 Information Security (93.88%)</div><div class="fbadge">Verified Credentials</div></div>
-        <div class="fact-card"><div class="fact-top"><span style="font-size:22px">&#x1F465;</span><strong>Community Leadership</strong></div><div class="fact-detail">Vice Leader, Embedded Systems Circle &middot; CAT Reloaded &middot; 2020&ndash;2022</div><div class="fbadge">Mentored Students</div></div>
+        <div class="fact-card"><div class="fact-top"><i data-lucide="graduation-cap" style="width:22px;height:22px;color:var(--blue);flex-shrink:0"></i><strong>Computer Science &amp; Engineering</strong></div><div class="fact-detail">Mansoura University &middot; Faculty of Engineering</div><div class="fbadge">GPA 3.36 / 4.0 &middot; 84% &middot; Grade: Very Good</div></div>
+        <div class="fact-card"><div class="fact-top"><i data-lucide="zap" style="width:22px;height:22px;color:var(--cyan);flex-shrink:0"></i><strong>ITI Intensive Track</strong></div><div class="fact-detail">Open-Source Applications Development &mdash; 9-Month Program, 2025&ndash;2026</div><div class="fbadge">In Progress</div></div>
+        <div class="fact-card"><div class="fact-top"><i data-lucide="shield-check" style="width:22px;height:22px;color:var(--orange);flex-shrink:0"></i><strong>AWS &amp; Security Certified</strong></div><div class="fact-detail">Cloud Practitioner + CS406 Information Security (93.88%)</div><div class="fbadge">Verified Credentials</div></div>
+        <div class="fact-card"><div class="fact-top"><i data-lucide="users" style="width:22px;height:22px;color:var(--purple);flex-shrink:0"></i><strong>Community Leadership</strong></div><div class="fact-detail">Vice Leader, Embedded Systems Circle &middot; CAT Reloaded &middot; 2020&ndash;2022</div><div class="fbadge">Mentored Students</div></div>
       </div>
     </div>
   </div>
@@ -420,8 +422,8 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:40px 0;te
       <div class="project-card">
         <div class="proj-img-wrap" onclick="openLightbox('images/projects/clinic.png','Clinic Appointment System')">
           <img src="images/projects/clinic.png" alt="Clinic Appointment System" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="proj-placeholder" style="display:none"><span class="proj-placeholder-icon">&#x1F3E5;</span><span class="proj-placeholder-label">clinic.png</span></div>
-          <span class="proj-img-badge badge-live">&#x2713; Screenshot</span>
+          <div class="proj-placeholder" style="display:none"><span class="proj-placeholder-icon"><i data-lucide="stethoscope"></i></span><span class="proj-placeholder-label">clinic.png</span></div>
+          <span class="proj-img-badge badge-live"><i data-lucide="check" style="width:10px;height:10px"></i> Screenshot</span>
           <div class="proj-img-overlay"><div class="proj-zoom-btn">Full View</div></div>
         </div>
         <div class="proj-body">
@@ -442,8 +444,8 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:40px 0;te
       <div class="project-card">
         <div class="proj-img-wrap" onclick="openLightbox('images/projects/hotel.jpg','Hotel Booking Platform')">
           <img src="images/projects/hotel.jpg" alt="Hotel Booking Platform" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="proj-placeholder" style="display:none"><span class="proj-placeholder-icon">&#x1F3E8;</span><span class="proj-placeholder-label">hotel.jpg</span></div>
-          <span class="proj-img-badge badge-live">&#x2713; Screenshot</span>
+          <div class="proj-placeholder" style="display:none"><span class="proj-placeholder-icon"><i data-lucide="building-2"></i></span><span class="proj-placeholder-label">hotel.jpg</span></div>
+          <span class="proj-img-badge badge-live"><i data-lucide="check" style="width:10px;height:10px"></i> Screenshot</span>
           <div class="proj-img-overlay"><div class="proj-zoom-btn">Full View</div></div>
         </div>
         <div class="proj-body">
@@ -464,8 +466,8 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:40px 0;te
       <div class="project-card">
         <div class="proj-img-wrap" onclick="openLightbox('images/projects/cafeteria.jpg','Cafeteria Ordering System')">
           <img src="images/projects/cafeteria.jpg" alt="Cafeteria Ordering System" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="proj-placeholder" style="display:none"><span class="proj-placeholder-icon">&#x2615;</span><span class="proj-placeholder-label">cafeteria.jpg</span></div>
-          <span class="proj-img-badge badge-live">&#x2713; Screenshot</span>
+          <div class="proj-placeholder" style="display:none"><span class="proj-placeholder-icon"><i data-lucide="coffee"></i></span><span class="proj-placeholder-label">cafeteria.jpg</span></div>
+          <span class="proj-img-badge badge-live"><i data-lucide="check" style="width:10px;height:10px"></i> Screenshot</span>
           <div class="proj-img-overlay"><div class="proj-zoom-btn">Full View</div></div>
         </div>
         <div class="proj-body">
@@ -486,7 +488,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:40px 0;te
       <div class="project-card">
         <div class="proj-img-wrap" onclick="openLightbox('images/projects/whatsapp_new.png','Pull Push — WhatsApp Clone')">
           <img src="images/projects/whatsapp_new.png" alt="WhatsApp Clone" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="proj-placeholder" style="display:none"><span class="proj-placeholder-icon">&#x1F4AC;</span><span class="proj-placeholder-label">whatsapp_new.png</span></div>
+          <div class="proj-placeholder" style="display:none"><span class="proj-placeholder-icon"><i data-lucide="message-circle"></i></span><span class="proj-placeholder-label">whatsapp_new.png</span></div>
           <div class="proj-img-overlay"><div class="proj-zoom-btn">Full View</div></div>
         </div>
         <div class="proj-body">
@@ -507,7 +509,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:40px 0;te
       <div class="project-card">
         <div class="proj-img-wrap" onclick="openLightbox('images/projects/ims_new.png','IMS — Next.js Management System')">
           <img src="images/projects/ims_new.png" alt="IMS Next.js" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="proj-placeholder" style="display:none"><span class="proj-placeholder-icon">&#x1F4CA;</span><span class="proj-placeholder-label">ims_new.png</span></div>
+          <div class="proj-placeholder" style="display:none"><span class="proj-placeholder-icon"><i data-lucide="bar-chart-2"></i></span><span class="proj-placeholder-label">ims_new.png</span></div>
           <div class="proj-img-overlay"><div class="proj-zoom-btn">Full View</div></div>
         </div>
         <div class="proj-body">
@@ -528,7 +530,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:40px 0;te
       <div class="project-card">
         <div class="proj-img-wrap" onclick="openLightbox('images/projects/quizverse_new.png','QuizVerse — Exam Platform')">
           <img src="images/projects/quizverse_new.png" alt="QuizVerse" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="proj-placeholder" style="display:none"><span class="proj-placeholder-icon">&#x1F393;</span><span class="proj-placeholder-label">quizverse_new.png</span></div>
+          <div class="proj-placeholder" style="display:none"><span class="proj-placeholder-icon"><i data-lucide="book-open"></i></span><span class="proj-placeholder-label">quizverse_new.png</span></div>
           <div class="proj-img-overlay"><div class="proj-zoom-btn">Full View</div></div>
         </div>
         <div class="proj-body">
@@ -564,7 +566,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:40px 0;te
 <div class="lightbox" id="lightbox">
   <div class="lb-backdrop" onclick="closeLightbox()"></div>
   <div class="lb-content">
-    <button class="lb-close" onclick="closeLightbox()">&#x2715;</button>
+    <button class="lb-close" onclick="closeLightbox()"><i data-lucide="x" style="width:16px;height:16px"></i></button>
     <img id="lbImg" src="" alt="">
     <div id="lbTitle" class="lb-title"></div>
   </div>
@@ -653,7 +655,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:40px 0;te
         <div class="fg"><label>Email Address</label><input type="email" placeholder="john@company.com" required></div>
         <div class="fg"><label>Subject</label><input type="text" placeholder="Job opportunity / Project collaboration"></div>
         <div class="fg"><label>Message</label><textarea placeholder="Tell me about the role or project..." required></textarea></div>
-        <button type="submit" class="form-btn" id="subBtn">Send Message &#x2709;</button>
+        <button type="submit" class="form-btn" id="subBtn">Send Message <i data-lucide="send" style="width:15px;height:15px;vertical-align:middle"></i></button>
       </form>
     </div>
   </div>
@@ -768,12 +770,14 @@ function handleSubmit(e){
   const btn=document.getElementById('subBtn');
   btn.textContent='Sending…';btn.disabled=true;
   setTimeout(()=>{
-    btn.textContent='✓ Sent!';
+    btn.innerHTML='<i data-lucide="check" style="width:15px;height:15px;vertical-align:middle"></i> Sent!';
     btn.style.background='linear-gradient(135deg,#34d399,#059669)';
+    lucide.createIcons();
     e.target.reset();
-    setTimeout(()=>{btn.textContent='Send Message ✉';btn.style.background='';btn.disabled=false;},3000);
+    setTimeout(()=>{btn.innerHTML='Send Message <i data-lucide="send" style="width:15px;height:15px;vertical-align:middle"></i>';btn.style.background='';btn.disabled=false;lucide.createIcons();},3000);
   },1200);
 }
+lucide.createIcons();
 </script>
 </body>
 </html>

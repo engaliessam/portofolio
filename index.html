@@ -3,11 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ali Essam — Software Engineer & Full-Stack Developer</title>
-<meta name="description" content="Ali Essam — Full-Stack Developer specializing in Python, Django, Node.js, Vue.js, React, and AI. Open to remote work and relocation.">
+<title>Ali Essam — Full Stack Engineer (Laravel &amp; Vue.js)</title>
+<meta name="description" content="Ali Essam, junior full stack engineer working mainly with Laravel and Vue.js, with Node.js (NestJS) as a secondary back end. Based in Greater Cairo, Egypt.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://portofolio-chi-ochre.vercel.app/">
+<meta property="og:title" content="Ali Essam — Full Stack Engineer (Laravel &amp; Vue.js)">
+<meta property="og:description" content="Junior full stack engineer working mainly with Laravel and Vue.js, with Node.js (NestJS) as a secondary back end. Based in Greater Cairo, Egypt.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script>
+// Shows a placeholder when a project screenshot is missing
+function imgFail(img){
+  img.style.display='none';
+  var w=img.parentElement;
+  var p=w.querySelector('.proj-placeholder');if(p)p.style.display='flex';
+  var o=w.querySelector('.proj-img-overlay');if(o)o.style.display='none';
+  w.onclick=null;w.style.cursor='default';
+}
+</script>
 <style>
 :root{
   --bg:#07090f;--bg2:#0e1117;--bg3:#161b27;--card:#1a2035;
@@ -74,6 +88,7 @@ nav.scrolled{background:rgba(7,9,15,.92);backdrop-filter:blur(20px);border-color
 .typed{color:var(--text);border-right:2px solid var(--blue);padding-right:3px;animation:blink .75s steps(1) infinite}
 @keyframes blink{0%,100%{border-color:var(--blue)}50%{border-color:transparent}}
 .hero-desc{font-size:16px;color:var(--muted);line-height:1.8;max-width:520px;margin-bottom:36px}
+.hero-desc strong{color:var(--text);font-weight:600}
 .hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 26px;border-radius:10px;font-weight:600;font-size:15px;cursor:pointer;transition:all var(--ease);border:none}
 .btn-p{background:var(--grad);color:#fff;box-shadow:0 4px 24px rgba(59,130,246,.3)}
@@ -109,8 +124,23 @@ nav.scrolled{background:rgba(7,9,15,.92);backdrop-filter:blur(20px);border-color
 .fact-detail{font-size:13px;color:var(--muted);line-height:1.6}
 .fbadge{display:inline-block;margin-top:8px;padding:3px 10px;border-radius:100px;font-size:11px;font-family:var(--mono);font-weight:600;background:rgba(52,211,153,.12);color:var(--green);border:1px solid rgba(52,211,153,.25)}
 
+/* EXPERIENCE */
+#experience{background:var(--bg)}
+.exp-list{display:flex;flex-direction:column;gap:20px;max-width:720px}
+.exp-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:32px;transition:border-color var(--ease)}
+.exp-card:hover{border-color:rgba(59,130,246,.3)}
+.exp-hdr{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:8px;flex-wrap:wrap}
+.exp-title{font-size:19px;font-weight:700}
+.exp-date{font-family:var(--mono);font-size:12px;color:var(--cyan);background:rgba(6,182,212,.08);border:1px solid rgba(6,182,212,.2);padding:4px 12px;border-radius:100px;white-space:nowrap}
+.exp-org{font-size:14px;color:var(--muted);margin-bottom:20px}
+.exp-blist{display:flex;flex-direction:column;gap:10px}
+.exp-b{display:flex;gap:10px;font-size:14px;color:var(--muted);line-height:1.7}
+.exp-b::before{content:'\25B9';color:var(--blue);flex-shrink:0;margin-top:1px}
+.exp-b a{color:var(--cyan);border-bottom:1px solid rgba(6,182,212,.35);transition:color var(--ease)}
+.exp-b a:hover{color:var(--text)}
+
 /* SKILLS */
-#skills{background:var(--bg)}
+#skills{background:var(--bg2)}
 .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
 .skill-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:24px;transition:border-color var(--ease),transform var(--ease);position:relative;overflow:hidden}
 .skill-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--grad);opacity:0;transition:opacity var(--ease)}
@@ -129,17 +159,6 @@ nav.scrolled{background:rgba(7,9,15,.92);backdrop-filter:blur(20px);border-color
 .to{background:rgba(251,146,60,.12);color:#fdba74;border:1px solid rgba(251,146,60,.2)}
 .tpk{background:rgba(244,114,182,.12);color:#f9a8d4;border:1px solid rgba(244,114,182,.2)}
 
-/* DEMO VIDEO */
-#demo{background:var(--bg2)}
-.demo-wrap{border-radius:20px;overflow:hidden;border:1px solid var(--border);box-shadow:0 32px 80px rgba(0,0,0,.5),0 0 0 1px rgba(59,130,246,.1);position:relative}
-.demo-wrap::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad);z-index:1}
-.demo-wrap video{width:100%;display:block;max-height:560px;object-fit:contain;background:#000}
-.demo-info{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-top:32px}
-.demo-stat{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:18px 22px;transition:border-color var(--ease)}
-.demo-stat:hover{border-color:rgba(59,130,246,.3)}
-.demo-stat-n{font-size:24px;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-family:var(--mono)}
-.demo-stat-l{font-size:13px;color:var(--muted);margin-top:4px}
-
 /* PROJECTS */
 #projects{background:var(--bg)}
 .project-card{background:var(--card);border:1px solid var(--border);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:transform var(--ease),border-color var(--ease),box-shadow var(--ease)}
@@ -156,9 +175,6 @@ nav.scrolled{background:rgba(7,9,15,.92);backdrop-filter:blur(20px);border-color
 .proj-img-wrap:hover .proj-img-overlay{opacity:1}
 .proj-zoom-btn{padding:9px 24px;border-radius:10px;background:var(--grad);color:#fff;font-size:13px;font-weight:700;box-shadow:0 4px 20px rgba(59,130,246,.4);transform:translateY(8px);transition:transform var(--ease)}
 .proj-img-wrap:hover .proj-zoom-btn{transform:translateY(0)}
-.proj-img-badge{position:absolute;top:10px;right:10px;z-index:3;padding:3px 10px;border-radius:100px;font-size:10px;font-family:var(--mono);font-weight:600;backdrop-filter:blur(8px)}
-.badge-live{background:rgba(52,211,153,.18);color:#6ee7b7;border:1px solid rgba(52,211,153,.3)}
-.badge-soon{background:rgba(255,255,255,.08);color:var(--dim);border:1px solid rgba(255,255,255,.1)}
 .proj-body{padding:22px 24px;display:flex;flex-direction:column;flex:1}
 .proj-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:10px}
 .proj-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
@@ -166,9 +182,10 @@ nav.scrolled{background:rgba(7,9,15,.92);backdrop-filter:blur(20px);border-color
 .proj-link{width:30px;height:30px;border-radius:7px;display:flex;align-items:center;justify-content:center;border:1px solid var(--border);color:var(--muted);font-size:13px;transition:all var(--ease)}
 .proj-link:hover{border-color:var(--blue);color:var(--blue);background:rgba(59,130,246,.08)}
 .proj-name{font-size:17px;font-weight:700;margin-bottom:8px}
+.proj-meta{font-family:var(--mono);font-size:11px;color:var(--cyan);letter-spacing:.5px;margin:-4px 0 10px}
 .proj-bullets{flex:1;margin-bottom:16px}
 .proj-bullets li{font-size:13px;color:var(--muted);line-height:1.65;padding-left:16px;position:relative;margin-bottom:4px}
-.proj-bullets li::before{content:'';position:absolute;left:0;color:var(--cyan);font-size:10px;top:3px}
+.proj-bullets li::before{content:'\25B9';position:absolute;left:0;color:var(--cyan);font-size:10px;top:3px}
 .proj-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
 .ptag{padding:3px 10px;border-radius:6px;font-size:11px;font-family:var(--mono);font-weight:500;background:rgba(255,255,255,.05);color:var(--muted);border:1px solid var(--border);transition:all var(--ease)}
 .project-card:hover .ptag{background:rgba(59,130,246,.08);border-color:rgba(59,130,246,.2);color:#93c5fd}
@@ -194,37 +211,13 @@ nav.scrolled{background:rgba(7,9,15,.92);backdrop-filter:blur(20px);border-color
 .tl-date{font-family:var(--mono);font-size:11px;color:var(--cyan);letter-spacing:1px;margin-bottom:6px}
 .tl-title{font-size:17px;font-weight:700;margin-bottom:4px}
 .tl-sub{font-size:13px;color:var(--muted);margin-bottom:12px}
+.tl-text{font-size:13.5px;color:var(--muted);line-height:1.7;margin-bottom:12px}
 .tl-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
 .bdg{padding:4px 12px;border-radius:100px;font-size:12px;font-weight:600;font-family:var(--mono)}
 .bdg-gold{background:rgba(251,191,36,.12);color:#fcd34d;border:1px solid rgba(251,191,36,.25)}
 .bdg-blue{background:rgba(59,130,246,.12);color:#93c5fd;border:1px solid rgba(59,130,246,.25)}
 .bdg-green{background:rgba(52,211,153,.12);color:#6ee7b7;border:1px solid rgba(52,211,153,.25)}
 .bdg-purple{background:rgba(167,139,250,.12);color:#c4b5fd;border:1px solid rgba(167,139,250,.25)}
-
-/* CERTS */
-#certifications{background:var(--bg)}
-.certs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
-.cert-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:28px;transition:all var(--ease);position:relative;overflow:hidden}
-.cert-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--grad);opacity:0;transition:opacity var(--ease)}
-.cert-card:hover{border-color:rgba(59,130,246,.3);transform:translateY(-4px)}
-.cert-card:hover::before{opacity:1}
-.cert-logo{font-size:36px;margin-bottom:14px}
-.cert-name{font-size:17px;font-weight:700;margin-bottom:4px}
-.cert-issuer{font-size:13px;color:var(--cyan);margin-bottom:12px;font-family:var(--mono)}
-.cert-desc{font-size:13.5px;color:var(--muted);line-height:1.7}
-.cert-score{margin-top:14px;display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:100px;background:rgba(52,211,153,.1);color:var(--green);font-size:12px;font-weight:600;font-family:var(--mono);border:1px solid rgba(52,211,153,.2)}
-
-/* EXPERIENCE */
-#experience{background:var(--bg2)}
-.exp-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:32px;max-width:720px;transition:border-color var(--ease)}
-.exp-card:hover{border-color:rgba(59,130,246,.3)}
-.exp-hdr{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:8px;flex-wrap:wrap}
-.exp-title{font-size:19px;font-weight:700}
-.exp-date{font-family:var(--mono);font-size:12px;color:var(--cyan);background:rgba(6,182,212,.08);border:1px solid rgba(6,182,212,.2);padding:4px 12px;border-radius:100px;white-space:nowrap}
-.exp-org{font-size:14px;color:var(--muted);margin-bottom:20px}
-.exp-blist{display:flex;flex-direction:column;gap:10px}
-.exp-b{display:flex;gap:10px;font-size:14px;color:var(--muted);line-height:1.7}
-.exp-b::before{content:'';color:var(--blue);flex-shrink:0;margin-top:1px}
 
 /* CONTACT */
 #contact{background:var(--bg)}
@@ -243,6 +236,7 @@ nav.scrolled{background:rgba(7,9,15,.92);backdrop-filter:blur(20px);border-color
 .fg textarea{min-height:110px}
 .form-btn{padding:12px 28px;border-radius:10px;background:var(--grad);color:#fff;font-weight:700;font-size:15px;cursor:pointer;border:none;transition:all var(--ease);align-self:flex-start;box-shadow:0 4px 20px rgba(59,130,246,.3)}
 .form-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(59,130,246,.4)}
+.form-note{font-size:12px;color:var(--dim);margin-top:-4px}
 
 /* FOOTER */
 footer{background:var(--bg);border-top:1px solid var(--border);padding:40px 0;text-align:center}
@@ -255,6 +249,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:40px 0;te
 .footer-links a{font-size:14px;color:var(--muted);transition:color var(--ease)}
 .footer-links a:hover{color:var(--text)}
 .footer-copy{font-size:13px;color:var(--dim)}
+
 /* CAROUSEL */
 .carousel-outer{position:relative;padding:0 60px}
 .carousel-container{overflow:hidden}
@@ -272,18 +267,23 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:40px 0;te
 /* RESPONSIVE */
 @media(max-width:900px){.hero-inner{grid-template-columns:1fr}.hero-card{display:none}.about-grid{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.nav-links{display:none}.burger{display:flex}}
 @media(max-width:700px){.carousel-track .project-card{flex:0 0 calc(100vw - 96px);width:calc(100vw - 96px)}.carousel-outer{padding:0 44px}}
-@media(max-width:600px){.section{padding:64px 0}.skills-grid,.certs-grid{grid-template-columns:1fr}.hero-stats{gap:20px}.hero-btns{flex-direction:column;align-items:flex-start}}
+@media(max-width:600px){.section{padding:64px 0}.skills-grid{grid-template-columns:1fr}.hero-stats{gap:20px}.hero-btns{flex-direction:column;align-items:flex-start}.exp-card{padding:24px}}
 </style>
 </head>
 <body>
+
+<!-- Shared GitHub icon -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-gh" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.410-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.460-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></symbol>
+</svg>
 
 <nav id="navbar">
   <div class="nav-inner">
     <a href="#hero" class="nav-logo">Ali Essam</a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
       <li><a href="#skills">Skills</a></li>
-      <li><a href="#demo">Demo</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#contact" class="nav-cta">Hire me</a></li>
@@ -294,8 +294,8 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:40px 0;te
 <div class="mob-menu" id="mobMenu">
   <span class="mob-close" onclick="toggleMenu()"><i data-lucide="x" style="width:24px;height:24px"></i></span>
   <a href="#about" onclick="toggleMenu()">About</a>
+  <a href="#experience" onclick="toggleMenu()">Experience</a>
   <a href="#skills" onclick="toggleMenu()">Skills</a>
-  <a href="#demo" onclick="toggleMenu()">Demo</a>
   <a href="#projects" onclick="toggleMenu()">Projects</a>
   <a href="#education" onclick="toggleMenu()">Education</a>
   <a href="#contact" onclick="toggleMenu()">Contact</a>
@@ -306,19 +306,19 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:40px 0;te
   <div class="hero-grid"></div>
   <div class="hero-inner">
     <div>
-      <div class="hero-badge"><span class="dot"></span>Available for Remote &amp; On-site</div>
+      <div class="hero-badge"><span class="dot"></span>Available immediately &middot; Greater Cairo</div>
       <h1 class="hero-name">Ali<br><span>Essam</span></h1>
       <div class="hero-role"><span id="typed" class="typed"></span></div>
-      <p class="hero-desc">Building scalable, end-to-end web applications with clean architecture and modern tech. Specialized in Python, Node.js, Vue.js, React, and integrating AI capabilities into production products.</p>
+      <p class="hero-desc">I build web applications end to end, mainly with <strong>Laravel and Vue 3</strong>, with <strong>Node.js (NestJS)</strong> as my secondary back end. One year of professional experience and a recent graduate of ITI's 9-month Open-Source Applications Development track.</p>
       <div class="hero-btns">
-        <a href="#projects" class="btn btn-p"><i data-lucide="play" style="width:15px;height:15px"></i> View Projects</a>
+        <a href="#projects" class="btn btn-p"><i data-lucide="arrow-down" style="width:15px;height:15px"></i> View Projects</a>
         <a href="#contact" class="btn btn-s"><i data-lucide="mail" style="width:15px;height:15px"></i> Get In Touch</a>
       </div>
       <div class="hero-stats">
-        <div><div class="stat-n">7+</div><div class="stat-l">Projects Shipped</div></div>
-        <div><div class="stat-n">3.36</div><div class="stat-l">GPA / 4.0</div></div>
-        <div><div class="stat-n">2</div><div class="stat-l">Certifications</div></div>
-        <div><div class="stat-n">5+</div><div class="stat-l">Tech Stacks</div></div>
+        <div><div class="stat-n">1 yr</div><div class="stat-l">Professional experience</div></div>
+        <div><div class="stat-n">6</div><div class="stat-l">Projects built</div></div>
+        <div><div class="stat-n">ITI</div><div class="stat-l">9-month track, completed</div></div>
+        <div><div class="stat-n">AWS</div><div class="stat-l">Cloud Practitioner</div></div>
       </div>
     </div>
     <div class="hero-card reveal">
@@ -331,9 +331,10 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:40px 0;te
       <div class="hero-card-code">
         <div><span class="hcc-k">const</span> <span class="hcc-n">profile</span> <span class="hcc-p">=</span> <span class="hcc-p">{</span></div>
         <div>&nbsp;&nbsp;<span class="hcc-s">name</span><span class="hcc-p">:</span> <span class="hcc-v">"Ali Essam"</span><span class="hcc-p">,</span></div>
-        <div>&nbsp;&nbsp;<span class="hcc-s">role</span><span class="hcc-p">:</span> <span class="hcc-v">"Backend Engineer"</span><span class="hcc-p">,</span></div>
-        <div>&nbsp;&nbsp;<span class="hcc-s">degree</span><span class="hcc-p">:</span> <span class="hcc-v">"CS &middot; 3.36 / 4.0"</span><span class="hcc-p">,</span></div>
-        <div>&nbsp;&nbsp;<span class="hcc-s">stack</span><span class="hcc-p">:</span> <span class="hcc-p">[</span><span class="hcc-v">"Python"</span><span class="hcc-p">,</span> <span class="hcc-v">"Node"</span><span class="hcc-p">,</span> <span class="hcc-v">"Vue"</span><span class="hcc-p">]</span><span class="hcc-p">,</span></div>
+        <div>&nbsp;&nbsp;<span class="hcc-s">role</span><span class="hcc-p">:</span> <span class="hcc-v">"Full Stack Engineer"</span><span class="hcc-p">,</span></div>
+        <div>&nbsp;&nbsp;<span class="hcc-s">main</span><span class="hcc-p">:</span> <span class="hcc-p">[</span><span class="hcc-v">"Laravel"</span><span class="hcc-p">,</span> <span class="hcc-v">"Vue"</span><span class="hcc-p">]</span><span class="hcc-p">,</span></div>
+        <div>&nbsp;&nbsp;<span class="hcc-s">secondary</span><span class="hcc-p">:</span> <span class="hcc-p">[</span><span class="hcc-v">"Node.js"</span><span class="hcc-p">]</span><span class="hcc-p">,</span></div>
+        <div>&nbsp;&nbsp;<span class="hcc-s">based</span><span class="hcc-p">:</span> <span class="hcc-v">"Greater Cairo"</span><span class="hcc-p">,</span></div>
         <div>&nbsp;&nbsp;<span class="hcc-s">open</span><span class="hcc-p">:</span> <span class="hcc-k">true</span></div>
         <div><span class="hcc-p">}</span></div>
       </div>
@@ -349,19 +350,47 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:40px 0;te
     <h2 class="sec-title">Building Things That <span>Actually Work</span></h2>
     <div class="about-grid">
       <div class="reveal-l about-text">
-        <p>I'm a <strong>Software Engineer</strong> from Mansoura, Egypt, with a Computer Science degree (GPA 3.36 / 4.0 · 84% · Very Good) and hands-on experience building production-grade web applications. Currently deepening my expertise through ITI's Open-Source Applications Development track.</p>
-        <p>My work spans the full spectrum &mdash; from designing secure RESTful APIs and relational/NoSQL database schemas, to crafting responsive UIs with Vue.js, React, and TypeScript. I care deeply about <strong>system architecture, security, and code quality</strong>, not just making things run.</p>
-        <p>I've worked across <strong>Python/Django, Node.js/Express, and PHP/Laravel</strong> ecosystems, integrated payment gateways (Stripe, Kashier), implemented JWT/RBAC authentication, and recently started building with Generative AI tools and RAG pipelines.</p>
+        <p>I'm a <strong>full stack engineer</strong> based in Sheikh Zayed City, Giza (Greater Cairo), with a B.Sc. in Computer Science &amp; Engineering from Mansoura University and one year of professional experience. I recently completed ITI's 9-month Open-Source Applications Development track.</p>
+        <p>My main stack is <strong>Laravel and Vue 3</strong> (Inertia.js, TypeScript) on MySQL/PostgreSQL, with <strong>Node.js and NestJS</strong> as my secondary back end. I've built REST APIs with JWT and role-based access control, Stripe payments with verified webhooks, and real-time features with Socket.IO.</p>
+        <p>I've also worked with Python (Django REST Framework, FastAPI) and React/Next.js, and co-built a rental marketplace with RAG-based AI assistants as my ITI graduation project.</p>
         <div class="about-hl">
-          <span style="flex-shrink:0;margin-top:2px;color:var(--cyan);display:flex"><i data-lucide="globe" style="width:20px;height:20px"></i></span>
-          <p><strong>Open to remote work &amp; relocation</strong>Based in Mansoura, Egypt. Military service: Completed. Available for full-time roles, contract work, or technical consulting.</p>
+          <span style="flex-shrink:0;margin-top:2px;color:var(--cyan);display:flex"><i data-lucide="map-pin" style="width:20px;height:20px"></i></span>
+          <p><strong>Available immediately</strong>Based in Greater Cairo. Open to full-time roles, on-site or remote, and to contract work. Military service: completed.</p>
         </div>
       </div>
       <div class="reveal">
-        <div class="fact-card"><div class="fact-top"><i data-lucide="graduation-cap" style="width:22px;height:22px;color:var(--blue);flex-shrink:0"></i><strong>Computer Science &amp; Engineering</strong></div><div class="fact-detail">Mansoura University &middot; Faculty of Engineering</div><div class="fbadge">GPA 3.36 / 4.0 &middot; 84% &middot; Grade: Very Good</div></div>
-        <div class="fact-card"><div class="fact-top"><i data-lucide="zap" style="width:22px;height:22px;color:var(--cyan);flex-shrink:0"></i><strong>ITI Intensive Track</strong></div><div class="fact-detail">Open-Source Applications Development &mdash; 9-Month Program, 2025&ndash;2026</div><div class="fbadge">In Progress</div></div>
-        <div class="fact-card"><div class="fact-top"><i data-lucide="shield-check" style="width:22px;height:22px;color:var(--orange);flex-shrink:0"></i><strong>AWS &amp; Security Certified</strong></div><div class="fact-detail">Cloud Practitioner + CS406 Information Security (93.88%)</div><div class="fbadge">Verified Credentials</div></div>
-        <div class="fact-card"><div class="fact-top"><i data-lucide="users" style="width:22px;height:22px;color:var(--purple);flex-shrink:0"></i><strong>Community Leadership</strong></div><div class="fact-detail">Vice Leader, Embedded Systems Circle &middot; CAT Reloaded &middot; 2020&ndash;2022</div><div class="fbadge">Mentored Students</div></div>
+        <div class="fact-card"><div class="fact-top"><i data-lucide="briefcase" style="width:22px;height:22px;color:var(--green);flex-shrink:0"></i><strong>Full Stack Developer</strong></div><div class="fact-detail">Morita Gaming &middot; Jun 2025 &ndash; Sep 2026</div><div class="fbadge">Internal ERP + online store</div></div>
+        <div class="fact-card"><div class="fact-top"><i data-lucide="zap" style="width:22px;height:22px;color:var(--cyan);flex-shrink:0"></i><strong>ITI Open-Source Applications Development</strong></div><div class="fact-detail">9-month professional track &middot; Oct 2025 &ndash; Aug 2026</div><div class="fbadge">Completed</div></div>
+        <div class="fact-card"><div class="fact-top"><i data-lucide="graduation-cap" style="width:22px;height:22px;color:var(--blue);flex-shrink:0"></i><strong>B.Sc. Computer Science &amp; Engineering</strong></div><div class="fact-detail">Mansoura University &middot; Faculty of Engineering</div><div class="fbadge">Very Good &middot; GPA 3.36 / 4.0</div></div>
+        <div class="fact-card"><div class="fact-top"><i data-lucide="shield-check" style="width:22px;height:22px;color:var(--orange);flex-shrink:0"></i><strong>AWS &amp; Security Certified</strong></div><div class="fact-detail">AWS Cloud Practitioner + CS406 Information Security (93.88%)</div><div class="fbadge">Verified Credentials</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="experience" class="section">
+  <div class="container">
+    <div class="sec-label">Experience</div>
+    <h2 class="sec-title">Work &amp; <span>Training</span></h2>
+    <p class="sec-desc">My professional role and ITI's intensive training program.</p>
+    <div class="exp-list">
+      <div class="exp-card">
+        <div class="exp-hdr"><div class="exp-title">Full Stack Developer</div><div class="exp-date">Jun 2025 &ndash; Sep 2026</div></div>
+        <div class="exp-org">Morita Gaming &middot; Online gaming services company</div>
+        <div class="exp-blist">
+          <div class="exp-b"><span>Translated the company's operational needs into an internal ERP system for tracking performance and day-to-day operations.</span></div>
+          <div class="exp-b"><span>Developed the company's customer-facing online store, <a href="https://moritagaming.store" target="_blank" rel="noopener">moritagaming.store</a>, for its Old School RuneScape services.</span></div>
+        </div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-hdr"><div class="exp-title">Trainee, Open-Source Applications Development Track</div><div class="exp-date">Oct 2025 &ndash; Aug 2026</div></div>
+        <div class="exp-org">Information Technology Institute (ITI) &middot; Intensive 9-month professional training program</div>
+        <div class="exp-blist">
+          <div class="exp-b"><span>Hands-on, project-based training across front end, back end, DevOps, cloud and AI.</span></div>
+          <div class="exp-b"><span>Graduation project: co-developed PropMatch AI, an Arabic-first rental marketplace of seven services with RAG-based AI assistants.</span></div>
+        </div>
       </div>
     </div>
   </div>
@@ -371,38 +400,16 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:40px 0;te
 
 <section id="skills" class="section">
   <div class="container">
-    <div class="sec-label">Technical Proficiency</div>
+    <div class="sec-label">What I Use</div>
     <h2 class="sec-title">Skills &amp; <span>Technologies</span></h2>
-    <p class="sec-desc">A broad, production-tested tech stack spanning frontend, backend, databases, DevOps, and AI.</p>
+    <p class="sec-desc">My main stack comes first, followed by what I've used in work and projects.</p>
     <div class="skills-grid">
-      <div class="skill-card reveal"><div class="skill-hdr"><span class="skill-hdr-num">01</span><span class="skill-hdr-title">Frontend</span></div><div class="tags"><span class="tag tb">HTML5</span><span class="tag tb">CSS3</span><span class="tag tb">JavaScript</span><span class="tag tb">TypeScript</span><span class="tag tc">React</span><span class="tag tc">Vue.js</span><span class="tag tc">Next.js</span><span class="tag tc">Angular</span><span class="tag tp">Tailwind CSS</span><span class="tag tp">Bootstrap</span></div></div>
-      <div class="skill-card reveal"><div class="skill-hdr"><span class="skill-hdr-num">02</span><span class="skill-hdr-title">Backend</span></div><div class="tags"><span class="tag tg">Python</span><span class="tag tg">Django</span><span class="tag tg">DRF</span><span class="tag to">Node.js</span><span class="tag to">Express.js</span><span class="tag to">Inertia.js</span><span class="tag tb">PHP</span><span class="tag tb">Laravel</span><span class="tag tp">Java</span><span class="tag tp">C++</span></div></div>
-      <div class="skill-card reveal"><div class="skill-hdr"><span class="skill-hdr-num">03</span><span class="skill-hdr-title">Databases &amp; ORM</span></div><div class="tags"><span class="tag tb">MySQL</span><span class="tag tb">PostgreSQL</span><span class="tag tg">MongoDB</span><span class="tag to">Redis</span><span class="tag tp">SQLite</span><span class="tag tc">Prisma ORM</span><span class="tag tc">Mongoose</span><span class="tag tc">Django ORM</span></div></div>
-      <div class="skill-card reveal"><div class="skill-hdr"><span class="skill-hdr-num">04</span><span class="skill-hdr-title">Security &amp; Auth</span></div><div class="tags"><span class="tag to">JWT</span><span class="tag to">RBAC</span><span class="tag to">OAuth</span><span class="tag tpk">App Security</span><span class="tag tpk">Webhook Verification</span><span class="tag tp">TDD</span><span class="tag tp">Unit Testing</span></div></div>
-      <div class="skill-card reveal"><div class="skill-hdr"><span class="skill-hdr-num">05</span><span class="skill-hdr-title">DevOps &middot; Cloud &middot; Pay</span></div><div class="tags"><span class="tag to">AWS</span><span class="tag tb">Docker</span><span class="tag tb">Git</span><span class="tag tb">GitHub Actions</span><span class="tag tg">CI/CD</span><span class="tag tg">Linux</span><span class="tag tc">Apache</span><span class="tag tc">Bash</span><span class="tag tp">Stripe</span><span class="tag tp">Kashier</span></div></div>
-      <div class="skill-card reveal"><div class="skill-hdr"><span class="skill-hdr-num">06</span><span class="skill-hdr-title">AI &amp; Architecture</span></div><div class="tags"><span class="tag tpk">Generative AI</span><span class="tag tpk">Prompt Engineering</span><span class="tag tpk">GenAI APIs</span><span class="tag tpk">RAG</span><span class="tag tb">OOP</span><span class="tag tb">SOLID</span><span class="tag tc">MVC</span><span class="tag tc">Clean Code</span><span class="tag tp">Design Patterns</span></div></div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<section id="demo" class="section">
-  <div class="container">
-    <div class="sec-label">Live Demo</div>
-    <h2 class="sec-title">React + Node.js <span>Project Demo</span></h2>
-    <p class="sec-desc">A full-stack application showcasing real-time features, clean component architecture, and a production-ready REST API backend.</p>
-    <div class="demo-wrap reveal">
-      <video controls preload="metadata" poster="">
-        <source src="images/demo.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-    <div class="demo-info">
-      <div class="demo-stat reveal"><div class="demo-stat-n">React</div><div class="demo-stat-l">Frontend Framework</div></div>
-      <div class="demo-stat reveal"><div class="demo-stat-n">Node.js</div><div class="demo-stat-l">Backend Runtime</div></div>
-      <div class="demo-stat reveal"><div class="demo-stat-n">REST API</div><div class="demo-stat-l">Architecture Pattern</div></div>
-      <div class="demo-stat reveal"><div class="demo-stat-n">Full Stack</div><div class="demo-stat-l">End-to-End Ownership</div></div>
+      <div class="skill-card reveal"><div class="skill-hdr"><span class="skill-hdr-num">01</span><span class="skill-hdr-title">Main stack</span></div><div class="tags"><span class="tag tb">PHP 8</span><span class="tag tb">Laravel</span><span class="tag tb">Eloquent</span><span class="tag tg">Vue 3</span><span class="tag tg">Pinia</span><span class="tag tg">Inertia.js</span><span class="tag tc">TypeScript</span><span class="tag tc">JavaScript</span><span class="tag tp">Tailwind CSS</span><span class="tag tp">HTML5</span><span class="tag tp">CSS3</span></div></div>
+      <div class="skill-card reveal"><div class="skill-hdr"><span class="skill-hdr-num">02</span><span class="skill-hdr-title">Secondary back end</span></div><div class="tags"><span class="tag to">Node.js</span><span class="tag to">NestJS</span><span class="tag to">Prisma</span><span class="tag to">Socket.IO</span></div></div>
+      <div class="skill-card reveal"><div class="skill-hdr"><span class="skill-hdr-num">03</span><span class="skill-hdr-title">Also worked with</span></div><div class="tags"><span class="tag tg">Python</span><span class="tag tg">Django REST Framework</span><span class="tag tg">FastAPI</span><span class="tag tc">React</span><span class="tag tc">Next.js</span><span class="tag tp">Bootstrap</span></div></div>
+      <div class="skill-card reveal"><div class="skill-hdr"><span class="skill-hdr-num">04</span><span class="skill-hdr-title">Databases</span></div><div class="tags"><span class="tag tb">MySQL</span><span class="tag tb">PostgreSQL</span><span class="tag tg">MongoDB</span><span class="tag tc">SQL</span></div></div>
+      <div class="skill-card reveal"><div class="skill-hdr"><span class="skill-hdr-num">05</span><span class="skill-hdr-title">APIs &amp; integrations</span></div><div class="tags"><span class="tag to">REST APIs</span><span class="tag to">JWT</span><span class="tag to">RBAC</span><span class="tag tp">Stripe</span><span class="tag tp">Webhook verification</span><span class="tag tpk">LLM APIs</span><span class="tag tpk">RAG</span><span class="tag tpk">ChromaDB</span></div></div>
+      <div class="skill-card reveal"><div class="skill-hdr"><span class="skill-hdr-num">06</span><span class="skill-hdr-title">Tools &amp; fundamentals</span></div><div class="tags"><span class="tag tb">Git &amp; GitHub</span><span class="tag tb">Docker</span><span class="tag tb">Docker Compose</span><span class="tag tg">Linux</span><span class="tag tg">Pest</span><span class="tag tc">OOP</span><span class="tag tc">SOLID</span><span class="tag tc">MVC</span><span class="tag tp">Design patterns</span></div></div>
     </div>
   </div>
 </section>
@@ -412,139 +419,144 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:40px 0;te
 <section id="projects" class="section">
   <div class="container">
     <div class="sec-label">Selected Work</div>
-    <h2 class="sec-title">Projects I've <span>Shipped</span></h2>
-    <p class="sec-desc">End-to-end applications spanning healthcare, hospitality, e-commerce, messaging, and education &mdash; each built with production-grade security and clean architecture.</p>
+    <h2 class="sec-title">Projects I've <span>Built</span></h2>
+    <p class="sec-desc">Led by my main stack (Laravel &amp; Vue), then Node.js, Python and Next.js work. Team projects are marked.</p>
     <div class="carousel-outer">
       <button class="carousel-btn cprev" aria-label="Previous project"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
       <div class="carousel-container">
         <div class="carousel-track">
 
-      <div class="project-card">
-        <div class="proj-img-wrap" onclick="openLightbox('images/projects/clinic.png','Clinic Appointment System')">
-          <img src="images/projects/clinic.png" alt="Clinic Appointment System" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="proj-placeholder" style="display:none"><span class="proj-placeholder-icon"><i data-lucide="stethoscope"></i></span><span class="proj-placeholder-label">clinic.png</span></div>
-          <span class="proj-img-badge badge-live"><i data-lucide="check" style="width:10px;height:10px"></i> Screenshot</span>
-          <div class="proj-img-overlay"><div class="proj-zoom-btn">Full View</div></div>
-        </div>
-        <div class="proj-body">
-          <div class="proj-top">
-            <div class="proj-icon" style="background:rgba(6,182,212,.12);color:#06b6d4"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg></div>
-            <div class="proj-links"><a href="https://github.com/engaliessam/Clinic" target="_blank" class="proj-link" title="GitHub"><svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a><a href="#" class="proj-link" title="Live Demo"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
-          </div>
-          <div class="proj-name">Clinic Appointment System</div>
-          <ul class="proj-bullets">
-            <li>Engineered role-based dashboards for admin, doctor, and patient</li>
-            <li>Implemented appointment scheduling &amp; consultation workflows</li>
-            <li>Integrated medical records module and operational analytics</li>
-          </ul>
-          <div class="proj-tags"><span class="ptag">Django</span><span class="ptag">DRF</span><span class="ptag">Vue 3</span><span class="ptag">MySQL</span><span class="ptag">JWT</span><span class="ptag">Tailwind CSS</span></div>
-        </div>
-      </div>
-
+      <!-- 1. Hotel -->
       <div class="project-card">
         <div class="proj-img-wrap" onclick="openLightbox('images/projects/hotel.jpg','Hotel Booking Platform')">
-          <img src="images/projects/hotel.jpg" alt="Hotel Booking Platform" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <img src="images/projects/hotel.jpg" alt="Hotel Booking Platform" onerror="imgFail(this)">
           <div class="proj-placeholder" style="display:none"><span class="proj-placeholder-icon"><i data-lucide="building-2"></i></span><span class="proj-placeholder-label">hotel.jpg</span></div>
-          <span class="proj-img-badge badge-live"><i data-lucide="check" style="width:10px;height:10px"></i> Screenshot</span>
           <div class="proj-img-overlay"><div class="proj-zoom-btn">Full View</div></div>
         </div>
         <div class="proj-body">
           <div class="proj-top">
             <div class="proj-icon" style="background:rgba(251,146,60,.12);color:#fb923c"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 22V8l9-6 9 6v14H3z"/><path d="M9 22V16h6v6M9 10h.01M15 10h.01"/></svg></div>
-            <div class="proj-links"><a href="https://github.com/engaliessam/hotel_system" target="_blank" class="proj-link" title="GitHub"><svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a><a href="#" class="proj-link" title="Live Demo"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+            <div class="proj-links"><a href="https://github.com/engaliessam/hotel_system" target="_blank" rel="noopener" class="proj-link" title="GitHub" aria-label="Hotel Booking Platform on GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-gh"/></svg></a></div>
           </div>
           <div class="proj-name">Hotel Booking Platform</div>
           <ul class="proj-bullets">
-            <li>Delivered full reservation platform with granular RBAC and admin panel</li>
-            <li>Integrated Stripe payment processing for bookings and deposits</li>
-            <li>SPA built with Vue 3 + TypeScript + Inertia.js on Laravel 13 backend</li>
+            <li>Reservation engine built as a state-based workflow, with room, reservation and payment states modeled as enums</li>
+            <li>Stripe payments (capture and refunds) through events and listeners, with webhook signature verification tested via the Stripe CLI</li>
+            <li>Vue 3 + TypeScript + Inertia.js front end on Laravel 13, with access control for four roles and Pest feature tests</li>
           </ul>
-          <div class="proj-tags"><span class="ptag">Laravel 13</span><span class="ptag">Vue 3</span><span class="ptag">TypeScript</span><span class="ptag">Inertia.js</span><span class="ptag">Stripe</span><span class="ptag">MySQL</span></div>
+          <div class="proj-tags"><span class="ptag">Laravel 13</span><span class="ptag">Vue 3</span><span class="ptag">TypeScript</span><span class="ptag">Inertia.js</span><span class="ptag">Stripe</span><span class="ptag">MySQL</span><span class="ptag">Pest</span></div>
         </div>
       </div>
 
+      <!-- 2. PropMatch AI -->
       <div class="project-card">
-        <div class="proj-img-wrap" onclick="openLightbox('images/projects/cafeteria.jpg','Cafeteria Ordering System')">
-          <img src="images/projects/cafeteria.jpg" alt="Cafeteria Ordering System" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="proj-placeholder" style="display:none"><span class="proj-placeholder-icon"><i data-lucide="coffee"></i></span><span class="proj-placeholder-label">cafeteria.jpg</span></div>
-          <span class="proj-img-badge badge-live"><i data-lucide="check" style="width:10px;height:10px"></i> Screenshot</span>
+        <div class="proj-img-wrap" onclick="openLightbox('images/projects/propmatch.png','PropMatch AI')">
+          <img src="images/projects/propmatch.png" alt="PropMatch AI" onerror="imgFail(this)">
+          <div class="proj-placeholder" style="display:none"><span class="proj-placeholder-icon"><i data-lucide="sparkles"></i></span><span class="proj-placeholder-label">propmatch.png</span></div>
           <div class="proj-img-overlay"><div class="proj-zoom-btn">Full View</div></div>
         </div>
         <div class="proj-body">
           <div class="proj-top">
-            <div class="proj-icon" style="background:rgba(251,146,60,.12);color:#fb923c"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M17 8h1a4 4 0 0 1 0 8h-1M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"/><path d="M6 2v3M10 2v3M14 2v3"/></svg></div>
-            <div class="proj-links"><a href="https://github.com/engaliessam/Cafeteria" target="_blank" class="proj-link" title="GitHub"><svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a><a href="#" class="proj-link" title="Live Demo"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+            <div class="proj-icon" style="background:rgba(244,114,182,.12);color:#f472b6"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5V21H3z"/><path d="M12 9.5l.9 2.1 2.1.9-2.1.9-.9 2.1-.9-2.1-2.1-.9 2.1-.9z"/></svg></div>
+            <div class="proj-links"></div>
           </div>
-          <div class="proj-name">Cafeteria Ordering System</div>
+          <div class="proj-name">PropMatch AI &mdash; Rental Marketplace</div>
+          <div class="proj-meta">ITI graduation project &middot; team</div>
           <ul class="proj-bullets">
-            <li>Designed real-time menu ordering with room-based table management</li>
-            <li>Implemented MVC architecture for clean code separation</li>
-            <li>Built admin dashboard with order tracking and daily analytics</li>
+            <li>Arabic-first, right-to-left rental marketplace built as seven services orchestrated with Docker Compose</li>
+            <li>RAG-based legal and support assistants over Egyptian rental-law and FAQ content, LLM-assisted property descriptions and explainable hybrid matching</li>
+            <li>Real-time chat and two-way offers over Socket.IO, with escalation from AI assistants to human support tickets</li>
           </ul>
-          <div class="proj-tags"><span class="ptag">PHP</span><span class="ptag">MySQL</span><span class="ptag">MVC</span><span class="ptag">Bootstrap</span><span class="ptag">JavaScript</span></div>
+          <div class="proj-tags"><span class="ptag">NestJS</span><span class="ptag">Prisma</span><span class="ptag">PostgreSQL</span><span class="ptag">Next.js</span><span class="ptag">TypeScript</span><span class="ptag">Socket.IO</span><span class="ptag">FastAPI</span><span class="ptag">ChromaDB</span><span class="ptag">Docker Compose</span></div>
         </div>
       </div>
 
+      <!-- 3. Clinic -->
+      <div class="project-card">
+        <div class="proj-img-wrap" onclick="openLightbox('images/projects/clinic.png','Clinic Appointment System')">
+          <img src="images/projects/clinic.png" alt="Clinic Appointment System" onerror="imgFail(this)">
+          <div class="proj-placeholder" style="display:none"><span class="proj-placeholder-icon"><i data-lucide="stethoscope"></i></span><span class="proj-placeholder-label">clinic.png</span></div>
+          <div class="proj-img-overlay"><div class="proj-zoom-btn">Full View</div></div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-top">
+            <div class="proj-icon" style="background:rgba(6,182,212,.12);color:#06b6d4"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg></div>
+            <div class="proj-links"><a href="https://github.com/engaliessam/Clinic" target="_blank" rel="noopener" class="proj-link" title="GitHub" aria-label="Clinic Appointment System on GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-gh"/></svg></a></div>
+          </div>
+          <div class="proj-name">Clinic Appointment System</div>
+          <ul class="proj-bullets">
+            <li>REST API for four roles (Admin, Doctor, Receptionist, Patient) with JWT rotation and blacklisting, email verification and password reset</li>
+            <li>Scheduling around doctor availability, slot durations and buffer times, with search and filtering</li>
+            <li>Vue 3 + Pinia single-page app with automatic JWT refresh</li>
+          </ul>
+          <div class="proj-tags"><span class="ptag">Vue 3</span><span class="ptag">Pinia</span><span class="ptag">Django REST Framework</span><span class="ptag">MySQL</span><span class="ptag">JWT</span><span class="ptag">Tailwind CSS</span></div>
+        </div>
+      </div>
+
+      <!-- 4. Pull Push -->
       <div class="project-card">
         <div class="proj-img-wrap" onclick="openLightbox('images/projects/whatsapp_new.png','Pull Push — WhatsApp Clone')">
-          <img src="images/projects/whatsapp_new.png" alt="WhatsApp Clone" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <img src="images/projects/whatsapp_new.png" alt="Pull Push WhatsApp clone" onerror="imgFail(this)">
           <div class="proj-placeholder" style="display:none"><span class="proj-placeholder-icon"><i data-lucide="message-circle"></i></span><span class="proj-placeholder-label">whatsapp_new.png</span></div>
           <div class="proj-img-overlay"><div class="proj-zoom-btn">Full View</div></div>
         </div>
         <div class="proj-body">
           <div class="proj-top">
             <div class="proj-icon" style="background:rgba(52,211,153,.12);color:#34d399"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-            <div class="proj-links"><a href="https://github.com/engaliessam/Whatsapp-clone" target="_blank" class="proj-link" title="GitHub"><svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a><a href="#" class="proj-link" title="Live Demo"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+            <div class="proj-links"><a href="https://github.com/engaliessam/Whatsapp-clone" target="_blank" rel="noopener" class="proj-link" title="GitHub" aria-label="Pull Push on GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-gh"/></svg></a></div>
           </div>
           <div class="proj-name">Pull Push &mdash; WhatsApp Clone</div>
           <ul class="proj-bullets">
-            <li>Built real-time messaging with WebSocket bidirectional communication</li>
-            <li>Implemented user authentication and private/group chat rooms</li>
-            <li>React frontend with Node.js + Socket.IO backend</li>
+            <li>Real-time messaging over Socket.IO with private and group chat rooms</li>
+            <li>User authentication with JWT</li>
+            <li>React front end with a Node.js + Socket.IO back end and MongoDB</li>
           </ul>
           <div class="proj-tags"><span class="ptag">React</span><span class="ptag">Node.js</span><span class="ptag">Socket.IO</span><span class="ptag">MongoDB</span><span class="ptag">JWT</span></div>
         </div>
       </div>
 
+      <!-- 5. IMS -->
       <div class="project-card">
-        <div class="proj-img-wrap" onclick="openLightbox('images/projects/ims_new.png','IMS — Next.js Management System')">
-          <img src="images/projects/ims_new.png" alt="IMS Next.js" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="proj-img-wrap" onclick="openLightbox('images/projects/ims_new.png','IMS — Inventory Management System')">
+          <img src="images/projects/ims_new.png" alt="IMS Inventory Management System" onerror="imgFail(this)">
           <div class="proj-placeholder" style="display:none"><span class="proj-placeholder-icon"><i data-lucide="bar-chart-2"></i></span><span class="proj-placeholder-label">ims_new.png</span></div>
           <div class="proj-img-overlay"><div class="proj-zoom-btn">Full View</div></div>
         </div>
         <div class="proj-body">
           <div class="proj-top">
             <div class="proj-icon" style="background:rgba(167,139,250,.12);color:#a78bfa"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 3v18h18"/><rect x="7" y="10" width="3" height="8" rx="1"/><rect x="13" y="6" width="3" height="12" rx="1"/></svg></div>
-            <div class="proj-links"><a href="https://github.com/engaliessam/Inventory_Management_system" target="_blank" class="proj-link" title="GitHub"><svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a><a href="#" class="proj-link" title="Live Demo"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+            <div class="proj-links"><a href="https://github.com/engaliessam/Inventory_Management_system" target="_blank" rel="noopener" class="proj-link" title="GitHub" aria-label="IMS on GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-gh"/></svg></a></div>
           </div>
-          <div class="proj-name">IMS &mdash; Next.js Management System</div>
+          <div class="proj-name">IMS &mdash; Inventory Management System</div>
           <ul class="proj-bullets">
-            <li>Developed a Next.js information management system with SSR/SSG</li>
-            <li>Built responsive dashboard with data tables and CRUD operations</li>
-            <li>Integrated REST API with secure role-based access control</li>
+            <li>Next.js app using server-side rendering and static generation</li>
+            <li>Responsive dashboard with data tables and CRUD operations</li>
+            <li>REST API integration with role-based access control</li>
           </ul>
           <div class="proj-tags"><span class="ptag">Next.js</span><span class="ptag">React</span><span class="ptag">TypeScript</span><span class="ptag">Tailwind CSS</span><span class="ptag">RBAC</span></div>
         </div>
       </div>
 
+      <!-- 6. Cafeteria -->
       <div class="project-card">
-        <div class="proj-img-wrap" onclick="openLightbox('images/projects/quizverse_new.png','QuizVerse — Exam Platform')">
-          <img src="images/projects/quizverse_new.png" alt="QuizVerse" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="proj-placeholder" style="display:none"><span class="proj-placeholder-icon"><i data-lucide="book-open"></i></span><span class="proj-placeholder-label">quizverse_new.png</span></div>
+        <div class="proj-img-wrap" onclick="openLightbox('images/projects/cafeteria.jpg','Cafeteria Ordering System')">
+          <img src="images/projects/cafeteria.jpg" alt="Cafeteria Ordering System" onerror="imgFail(this)">
+          <div class="proj-placeholder" style="display:none"><span class="proj-placeholder-icon"><i data-lucide="coffee"></i></span><span class="proj-placeholder-label">cafeteria.jpg</span></div>
           <div class="proj-img-overlay"><div class="proj-zoom-btn">Full View</div></div>
         </div>
         <div class="proj-body">
           <div class="proj-top">
-            <div class="proj-icon" style="background:rgba(244,114,182,.12);color:#f472b6"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9.5 9a2.5 2.5 0 0 1 5 0c0 2.5-3 2.5-3 5"/><path d="M12 18h.01" stroke-width="2.2"/></svg></div>
-            <div class="proj-links"><a href="https://github.com/engaliessam/ITI-JS-Project" target="_blank" class="proj-link" title="GitHub"><svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a><a href="#" class="proj-link" title="Live Demo"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+            <div class="proj-icon" style="background:rgba(59,130,246,.12);color:#3b82f6"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M17 8h1a4 4 0 0 1 0 8h-1M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"/><path d="M6 2v3M10 2v3M14 2v3"/></svg></div>
+            <div class="proj-links"><a href="https://github.com/engaliessam/Cafeteria" target="_blank" rel="noopener" class="proj-link" title="GitHub" aria-label="Cafeteria Ordering System on GitHub"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-gh"/></svg></a></div>
           </div>
-          <div class="proj-name">QuizVerse &mdash; Exam Platform</div>
+          <div class="proj-name">Cafeteria Ordering System</div>
+          <div class="proj-meta">Team of 5</div>
           <ul class="proj-bullets">
-            <li>Created web-based exam platform with authentication and timers</li>
-            <li>Applied MVC architecture for clean separation of concerns</li>
-            <li>Dynamic quiz workflows with instant scoring and performance history</li>
+            <li>Owned the My Orders module end to end</li>
+            <li>Built inside the team's from-scratch PHP MVC framework: custom router, middleware pipeline and PDO with parameterized queries</li>
+            <li>Integrated with teammates' authentication, cart, admin and reporting modules</li>
           </ul>
-          <div class="proj-tags"><span class="ptag">HTML5</span><span class="ptag">CSS3</span><span class="ptag">JavaScript</span><span class="ptag">MVC</span><span class="ptag">PHP</span></div>
+          <div class="proj-tags"><span class="ptag">PHP 8</span><span class="ptag">MySQL</span><span class="ptag">PDO</span><span class="ptag">MVC</span><span class="ptag">Bootstrap</span><span class="ptag">JavaScript</span></div>
         </div>
       </div>
 
@@ -552,21 +564,14 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:40px 0;te
       </div>
       <button class="carousel-btn cnext" aria-label="Next project"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
     </div>
-    <div class="carousel-dots">
-      <button class="cdot active" aria-label="Project 1"></button>
-      <button class="cdot" aria-label="Project 2"></button>
-      <button class="cdot" aria-label="Project 3"></button>
-      <button class="cdot" aria-label="Project 4"></button>
-      <button class="cdot" aria-label="Project 5"></button>
-      <button class="cdot" aria-label="Project 6"></button>
-    </div>
+    <div class="carousel-dots" id="cdots"></div>
   </div>
 </section>
 
 <div class="lightbox" id="lightbox">
   <div class="lb-backdrop" onclick="closeLightbox()"></div>
   <div class="lb-content">
-    <button class="lb-close" onclick="closeLightbox()"><i data-lucide="x" style="width:16px;height:16px"></i></button>
+    <button class="lb-close" onclick="closeLightbox()" aria-label="Close"><i data-lucide="x" style="width:16px;height:16px"></i></button>
     <img id="lbImg" src="" alt="">
     <div id="lbTitle" class="lb-title"></div>
   </div>
@@ -576,10 +581,9 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:40px 0;te
 
 <section id="education" class="section">
   <div class="container">
-    <div class="sec-label">BACKGROUND</div>
+    <div class="sec-label">Background</div>
     <h2 class="sec-title">Education &amp; <span>Credentials</span></h2>
-    <p class="sec-desc">Academic foundation, industry certifications, and community leadership.</p>
-
+    <p class="sec-desc">Degree, certifications and community leadership.</p>
     <div class="timeline">
       <div class="tl-item reveal">
         <div class="tl-dot"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
@@ -587,18 +591,8 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:40px 0;te
           <div class="tl-date">OCT 2018 &mdash; JUL 2023</div>
           <div class="tl-title">B.Sc. Computer Science &amp; Engineering</div>
           <div class="tl-sub">Mansoura University &middot; Faculty of Engineering &middot; Egypt</div>
-          <p style="font-size:13.5px;color:var(--muted);line-height:1.7;margin-bottom:12px">Graduation project "FreeSmile" &mdash; a full-stack web application demonstrating end-to-end ownership from design to deployment, with custom UI/UX and efficient server-side logic.</p>
-          <div class="tl-badges"><span class="bdg bdg-gold">GPA 3.36 / 4.0</span><span class="bdg bdg-green">84% · Very Good</span><span class="bdg bdg-blue">Computer Science</span><span class="bdg bdg-purple">Engineering</span></div>
-        </div>
-      </div>
-      <div class="tl-item reveal">
-        <div class="tl-dot"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-        <div class="tl-body">
-          <div class="tl-date">OCT 2025 &mdash; AUG 2026</div>
-          <div class="tl-title">Open-Source Applications Development</div>
-          <div class="tl-sub">ITI (Information Technology Institute) &middot; Egypt &middot; 9-Month Track</div>
-          <p style="font-size:13.5px;color:var(--muted);line-height:1.7;margin-bottom:12px">Intensive professional track covering the full open-source web ecosystem &mdash; frontend, backend, DevOps, cloud, and AI, with hands-on project-based curriculum.</p>
-          <div class="tl-badges"><span class="bdg bdg-blue">In Progress</span><span class="bdg bdg-purple">Open Source</span><span class="bdg bdg-green">ITI Certified</span></div>
+          <p class="tl-text">Graduation project: &ldquo;FreeSmile&rdquo;, a full-stack web application.</p>
+          <div class="tl-badges"><span class="bdg bdg-green">Grade: Very Good</span><span class="bdg bdg-gold">GPA 3.36 / 4.0</span></div>
         </div>
       </div>
       <div class="tl-item reveal">
@@ -607,18 +601,18 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:40px 0;te
           <div class="tl-date">CERTIFICATION</div>
           <div class="tl-title">AWS Certified Cloud Practitioner</div>
           <div class="tl-sub">Amazon Web Services &middot; CLF-C02</div>
-          <p style="font-size:13.5px;color:var(--muted);line-height:1.7;margin-bottom:12px">Validated foundational knowledge of AWS core services, cloud architecture, security controls, pricing models, and the AWS Well-Architected Framework.</p>
-          <div class="tl-badges"><span class="bdg bdg-gold">AWS Certified</span><span class="bdg bdg-blue">Cloud Practitioner</span></div>
+          <p class="tl-text">Foundational knowledge of AWS core services, cloud architecture, security, pricing models and the Well-Architected Framework.</p>
+          <div class="tl-badges"><span class="bdg bdg-gold">AWS Certified</span></div>
         </div>
       </div>
       <div class="tl-item reveal">
-        <div class="tl-dot" style="border-color:var(--blue)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <div class="tl-dot"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
         <div class="tl-body">
           <div class="tl-date">CERTIFICATION</div>
           <div class="tl-title">CS406: Information Security</div>
-          <div class="tl-sub">Saylor University &middot; 46 Hours</div>
-          <p style="font-size:13.5px;color:var(--muted);line-height:1.7;margin-bottom:12px">Rigorous program covering threat modeling, cryptography, access control systems, network security, and industry security best practices.</p>
-          <div class="tl-badges"><span class="bdg bdg-green">Score: 93.88%</span><span class="bdg bdg-blue">Information Security</span></div>
+          <div class="tl-sub">Saylor Academy &middot; 46 hours</div>
+          <p class="tl-text">Threat modeling, cryptography, access control, network security and security best practices.</p>
+          <div class="tl-badges"><span class="bdg bdg-green">Score: 93.88%</span></div>
         </div>
       </div>
       <div class="tl-item reveal">
@@ -627,8 +621,8 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:40px 0;te
           <div class="tl-date">SEP 2020 &mdash; JUL 2022</div>
           <div class="tl-title">Vice Leader, Embedded Systems Circle</div>
           <div class="tl-sub">CAT Reloaded &middot; Mansoura, Egypt</div>
-          <p style="font-size:13.5px;color:var(--muted);line-height:1.7;margin-bottom:12px">Led and mentored a student team of 50+ members, delivering workshops on microcontrollers, C programming, and hardware interfacing. Oversaw curriculum design and cross-functional engineering projects.</p>
-          <div class="tl-badges"><span class="bdg bdg-purple">Community Leadership</span><span class="bdg bdg-green">Mentored 50+ Students</span></div>
+          <p class="tl-text">Designed the circle's curriculum and mentored 50+ students through hands-on workshops on microcontrollers, C and hardware interfacing.</p>
+          <div class="tl-badges"><span class="bdg bdg-purple">Mentored 50+ students</span></div>
         </div>
       </div>
     </div>
@@ -641,21 +635,22 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:40px 0;te
   <div class="container">
     <div class="sec-label">Let's Work Together</div>
     <h2 class="sec-title">Get In <span>Touch</span></h2>
-    <p class="sec-desc">Open to remote roles, contract work, and full-time opportunities. Response within 24 hours.</p>
+    <p class="sec-desc">Open to full-time roles in Greater Cairo or remote, and to contract work. Response within 24 hours.</p>
     <div class="contact-grid">
       <div class="contact-info reveal-l">
         <a href="mailto:eng.ali.essam@gmail.com" class="contact-item"><div class="ci-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg></div><div><div class="ci-label">Email</div><div class="ci-val">eng.ali.essam@gmail.com</div></div></a>
-        <a href="tel:+201026763869" class="contact-item"><div class="ci-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.92 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.91 6.91l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><div class="ci-label">Phone</div><div class="ci-val">+201026763869</div></div></a>
-        <div class="contact-item"><div class="ci-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="ci-label">Location</div><div class="ci-val">Mansoura, Egypt &mdash; Remote / Relocate</div></div></div>
-        <a href="https://www.linkedin.com/in/ali-esam-7294b9375/" target="_blank" class="contact-item"><div class="ci-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></div><div><div class="ci-label">LinkedIn</div><div class="ci-val">linkedin.com/in/ali-esam</div></div></a>
-        <a href="https://github.com/engaliessam" target="_blank" class="contact-item"><div class="ci-icon"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></div><div><div class="ci-label">GitHub</div><div class="ci-val">github.com/engaliessam</div></div></a>
+        <a href="tel:+201026763869" class="contact-item"><div class="ci-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12a19.790 19.790 0 0 1-3.07-8.67A2 2 0 0 1 3.92 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.91 6.91l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><div class="ci-label">Phone</div><div class="ci-val">+20 102 676 3869</div></div></a>
+        <div class="contact-item"><div class="ci-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="ci-label">Location</div><div class="ci-val">Sheikh Zayed City, Giza (Greater Cairo)</div></div></div>
+        <a href="https://www.linkedin.com/in/ali-esam-7294b9375/" target="_blank" rel="noopener" class="contact-item"><div class="ci-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></div><div><div class="ci-label">LinkedIn</div><div class="ci-val">linkedin.com/in/ali-esam-7294b9375</div></div></a>
+        <a href="https://github.com/engaliessam" target="_blank" rel="noopener" class="contact-item"><div class="ci-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-gh"/></svg></div><div><div class="ci-label">GitHub</div><div class="ci-val">github.com/engaliessam</div></div></a>
       </div>
       <form class="contact-form reveal" onsubmit="handleSubmit(event)">
-        <div class="fg"><label>Your Name</label><input type="text" placeholder="John Doe" required></div>
-        <div class="fg"><label>Email Address</label><input type="email" placeholder="john@company.com" required></div>
-        <div class="fg"><label>Subject</label><input type="text" placeholder="Job opportunity / Project collaboration"></div>
-        <div class="fg"><label>Message</label><textarea placeholder="Tell me about the role or project..." required></textarea></div>
-        <button type="submit" class="form-btn" id="subBtn">Send Message <i data-lucide="send" style="width:15px;height:15px;vertical-align:middle"></i></button>
+        <div class="fg"><label for="cf-name">Your Name</label><input id="cf-name" type="text" placeholder="John Doe" required></div>
+        <div class="fg"><label for="cf-email">Email Address</label><input id="cf-email" type="email" placeholder="john@company.com" required></div>
+        <div class="fg"><label for="cf-subject">Subject</label><input id="cf-subject" type="text" placeholder="Job opportunity / Project collaboration"></div>
+        <div class="fg"><label for="cf-message">Message</label><textarea id="cf-message" placeholder="Tell me about the role or project..." required></textarea></div>
+        <button type="submit" class="form-btn">Send via Email <i data-lucide="send" style="width:15px;height:15px;vertical-align:middle"></i></button>
+        <p class="form-note">This opens your email app with the message filled in.</p>
       </form>
     </div>
   </div>
@@ -666,19 +661,19 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:40px 0;te
     <div class="footer-inner">
       <div class="footer-logo">Ali Essam</div>
       <div class="footer-social">
-        <a href="https://github.com/engaliessam" target="_blank" class="soc" title="GitHub"><svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a>
-        <a href="https://www.linkedin.com/in/ali-esam-7294b9375/" target="_blank" class="soc" title="LinkedIn"><svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.361 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="https://github.com/engaliessam" target="_blank" rel="noopener" class="soc" title="GitHub"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-gh"/></svg></a>
+        <a href="https://www.linkedin.com/in/ali-esam-7294b9375/" target="_blank" rel="noopener" class="soc" title="LinkedIn"><svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.361 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
         <a href="mailto:eng.ali.essam@gmail.com" class="soc" title="Email"><svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
       </div>
-      <div class="footer-links"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div>
-      <div class="footer-copy">&copy; 2025 ali essam &nbsp;&middot;&nbsp; <span style="font-family:var(--mono);color:var(--blue)">built with html &middot; css &middot; js</span></div>
+      <div class="footer-links"><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div>
+      <div class="footer-copy">&copy; <span id="yr">2026</span> Ali Essam &nbsp;&middot;&nbsp; <span style="font-family:var(--mono);color:var(--blue)">built with html &middot; css &middot; js</span></div>
     </div>
   </div>
 </footer>
 
-
 <script>
-const roles=['Full-Stack Developer','Backend Engineer','React Developer','API Architect','Python & Django Dev','Node.js Engineer'];
+// Typing effect
+const roles=['Full Stack Engineer','Laravel Developer','Vue.js Developer','Node.js & NestJS Developer'];
 let ri=0,ci=0,del=false;
 const tel=document.getElementById('typed');
 function type(){
@@ -690,10 +685,11 @@ function type(){
   setTimeout(type,d);
 }
 type();
-const nav=document.getElementById('navbar');
+
+// Navbar state + active link
+const navbar=document.getElementById('navbar');
 window.addEventListener('scroll',()=>{
-  const y=window.scrollY;
-  nav.classList.toggle('scrolled',y>50);
+  navbar.classList.toggle('scrolled',window.scrollY>50);
   document.querySelectorAll('.nav-links a[href^="#"]').forEach(a=>{
     const s=document.querySelector(a.getAttribute('href'));
     if(!s)return;
@@ -701,24 +697,31 @@ window.addEventListener('scroll',()=>{
     a.classList.toggle('active',r.top<=100&&r.bottom>100);
   });
 });
+
+// Reveal animations
 const io=new IntersectionObserver(entries=>{
   entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('on'),i*80);io.unobserve(e.target);}});
 },{threshold:.1});
 document.querySelectorAll('.reveal,.reveal-l').forEach(el=>io.observe(el));
+
 const sg=new IntersectionObserver(entries=>{
   entries.forEach(e=>{
     if(e.isIntersecting){
-      e.target.querySelectorAll('.project-card,.skill-card,.cert-card,.fact-card,.demo-stat').forEach((el,i)=>{
+      e.target.querySelectorAll('.project-card,.skill-card,.fact-card,.exp-card').forEach((el,i)=>{
         el.style.opacity='0';el.style.transform='translateY(24px)';
         el.style.transition='opacity .5s ease '+i*.09+'s,transform .5s ease '+i*.09+'s';
         setTimeout(()=>{el.style.opacity='1';el.style.transform='none';},i*90+100);
+        setTimeout(()=>{el.style.transition='';},i*90+800);
       });
       sg.unobserve(e.target);
     }
   });
 },{threshold:.05});
-document.querySelectorAll('.carousel-outer,.skills-grid,.certs-grid,.about-grid,.demo-info').forEach(el=>sg.observe(el));
+document.querySelectorAll('.carousel-outer,.skills-grid,.about-grid,.exp-list').forEach(el=>sg.observe(el));
+
 function toggleMenu(){document.getElementById('mobMenu').classList.toggle('open');}
+
+// Lightbox
 function openLightbox(src,title){
   const tmp=new Image();
   tmp.onload=()=>{
@@ -727,57 +730,61 @@ function openLightbox(src,title){
     document.getElementById('lightbox').classList.add('open');
     document.body.style.overflow='hidden';
   };
-  tmp.onerror=()=>{};
   tmp.src=src;
 }
 function closeLightbox(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
-// ── CAROUSEL ────────────────────────────────────────────────────────────────
+
+// Projects carousel (dots are generated from the number of cards)
 (function(){
   const track=document.querySelector('.carousel-track');
   if(!track)return;
   const cards=Array.from(track.querySelectorAll('.project-card'));
   const N=cards.length;
-  let cur=0,busy=false;
-  const dots=Array.from(document.querySelectorAll('.cdot'));
+  const dotWrap=document.getElementById('cdots');
+  cards.forEach((_,i)=>{
+    const b=document.createElement('button');
+    b.className='cdot'+(i===0?' active':'');
+    b.setAttribute('aria-label','Project '+(i+1));
+    dotWrap.appendChild(b);
+  });
+  const dots=Array.from(dotWrap.children);
   const GAP=28;
-  function cw(){return cards[0].getBoundingClientRect().width+GAP;}
+  let cur=0,busy=false;
   function move(idx,anim){
-    const cw2=cards[0].getBoundingClientRect().width;
-    const x=(track.parentElement.offsetWidth-cw2)/2-idx*(cw2+GAP);
+    const w=cards[0].getBoundingClientRect().width;
+    const x=(track.parentElement.offsetWidth-w)/2-idx*(w+GAP);
     track.style.transition=anim?'transform .48s cubic-bezier(.4,0,.2,1)':'none';
     track.style.transform='translateX('+x+'px)';
     dots.forEach((d,i)=>d.classList.toggle('active',i===idx));
   }
-  function nav(dir){
+  function go(dir){
     if(busy)return;
-    const next=(cur+dir+N)%N;
     const wrap=(dir===1&&cur===N-1)||(dir===-1&&cur===0);
-    cur=next;
+    cur=(cur+dir+N)%N;
     if(wrap){move(cur,false);}else{busy=true;move(cur,true);setTimeout(()=>busy=false,500);}
   }
-  document.querySelector('.cprev').addEventListener('click',()=>nav(-1));
-  document.querySelector('.cnext').addEventListener('click',()=>nav(1));
+  document.querySelector('.cprev').addEventListener('click',()=>go(-1));
+  document.querySelector('.cnext').addEventListener('click',()=>go(1));
   dots.forEach((d,i)=>d.addEventListener('click',()=>{if(cur===i||busy)return;cur=i;busy=true;move(cur,true);setTimeout(()=>busy=false,500);}));
   let tx0=0;
   track.addEventListener('touchstart',e=>{tx0=e.touches[0].clientX;},{passive:true});
-  track.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-tx0;if(Math.abs(dx)>50)nav(dx<0?1:-1);},{passive:true});
+  track.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-tx0;if(Math.abs(dx)>50)go(dx<0?1:-1);},{passive:true});
   move(0,false);
   window.addEventListener('resize',()=>move(cur,false));
 })();
+
+// Contact form: opens the visitor's email app with the message filled in
 function handleSubmit(e){
   e.preventDefault();
-  const btn=document.getElementById('subBtn');
-  btn.textContent='Sending…';btn.disabled=true;
-  setTimeout(()=>{
-    btn.innerHTML='<i data-lucide="check" style="width:15px;height:15px;vertical-align:middle"></i> Sent!';
-    btn.style.background='linear-gradient(135deg,#34d399,#059669)';
-    lucide.createIcons();
-    e.target.reset();
-    setTimeout(()=>{btn.innerHTML='Send Message <i data-lucide="send" style="width:15px;height:15px;vertical-align:middle"></i>';btn.style.background='';btn.disabled=false;lucide.createIcons();},3000);
-  },1200);
+  const v=id=>document.getElementById(id).value.trim();
+  const subject=v('cf-subject')||'Hello from your portfolio';
+  const body=v('cf-message')+'\n\n'+v('cf-name')+' ('+v('cf-email')+')';
+  window.location.href='mailto:eng.ali.essam@gmail.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
 }
-lucide.createIcons();
+
+document.getElementById('yr').textContent=new Date().getFullYear();
+if(window.lucide)lucide.createIcons();
 </script>
 </body>
 </html>
